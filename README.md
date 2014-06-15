@@ -2,10 +2,11 @@
 
 ## Instalação
 
-1. Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
-2. Preparar projeto:
+* Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
 
-2.1. No NetBeans ir no menu **Equipe > Git > Clonar...**
+* Preparar projeto:
+
+** No NetBeans ir no menu **Equipe > Git > Clonar...**
 
 2.2. Informar no campo **URL do Repositório** a seguinte informação: https://github.com/davidsonalencar/yii2-basic.git
 
