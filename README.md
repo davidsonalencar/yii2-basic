@@ -2,7 +2,9 @@
 
 ## Instalação
 
-### Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
+### API de desenvolvimento:
+
+* Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
 
 ### Preparar projeto:
 
