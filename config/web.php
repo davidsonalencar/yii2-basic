@@ -8,6 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
+    'timezone' => 'America/Sao_Paulo',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
