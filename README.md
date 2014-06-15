@@ -29,3 +29,15 @@ php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 php composer.phar install
 ```
+
+### Direito de escrita nos diretórios:
+
+* Dê direito de escrita nos seguintes diretórios:
+```
+chmod 777 runtime/
+chmod 777 web/assets/
+```
+
+<<<
+wget http://codeception.com/codecept.phar .
+>>>
