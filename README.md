@@ -14,6 +14,7 @@
 2.4. Clique no botão **Criar Projeto**. Em seguida, na categoria **PHP**, clique em **Aplicação PHP com Códigos-fonte Existentes**. 
 
 2.5. No campo **Pasta da Fonte** informe o local onde foi realizado o clone do código fonte. No campo **Versão PHP** seleciona *PHP 5.4* ou superior. Clique em **Finalizar**.
+
 3. Instalando dependências:
 
 3.1. Via command line, acesse o diretório onde foi realizado o clone do código fonte e execute o comando abaixo para criar o arquivo **composer.phar**: 
