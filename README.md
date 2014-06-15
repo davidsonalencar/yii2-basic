@@ -61,8 +61,15 @@ if (!ini_get('date.timezone')) {
 
 #### Configuração da URL
 
+Garantir que a linha abaixo do arquivo **tests/_bootstrap.php** esteja referenciando o caminho correto do projeto:
 ```
-defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', <b>'/basic/web/index-test.php'</b>);
+defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', '/yii2-basic/web/index-test.php');
+```
+
+Também garantir que a linha abaixo do arquivo **tests/acceptance.suite.yml** esteja referenciando o domínio correto do projeto. Indicar a porta de existir.
+```
+    PhpBrowser:
+        url: 'http://localhost'
 ```
 
 
