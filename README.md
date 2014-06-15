@@ -20,7 +20,7 @@
 
 ### Instalando dependências:
 
-* Via command line, acesse o diretório onde foi realizado o clone do código fonte e execute o comando abaixo para criar o arquivo **composer.phar**: 
+* Via command line, acesse o diretório base da aplicação e execute o comando abaixo para criar o arquivo **composer.phar**: 
 ```
 php -r "readfile('https://getcomposer.org/installer');" | php
 ```
@@ -38,6 +38,14 @@ chmod 777 runtime/
 chmod 777 web/assets/
 ```
 
-<<<
-wget http://codeception.com/codecept.phar .
->>>
+### Preparando Codeception. Unidades de teste:
+
+* Execute o comando abaixo para adicionar o Codeception e suas dependências:
+```
+php composer.phar require --dev "codeception/codeception: 1.8.*@dev" "codeception/specify: *" "codeception/verify: *"
+```
+
+* Execute o comando abaixo para construir os conjuntos de testes:
+```
+vendor/bin/codecept build
+```
