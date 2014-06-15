@@ -40,7 +40,9 @@ chmod 777 web/assets/
 
 ### Preparando Codeception. Unidades de teste:
 
-* Execute o comando abaixo para adicionar o Codeception e suas dependências:
+#### Preparação:
+
+* Execute o comando abaixo para adicionar o Codeception e suas dependências. Para mais detalhes leia o /tests/README.md:
 ```
 php composer.phar require --dev "codeception/codeception: 1.8.*@dev" "codeception/specify: *" "codeception/verify: *"
 ```
@@ -49,3 +51,19 @@ php composer.phar require --dev "codeception/codeception: 1.8.*@dev" "codeceptio
 ```
 vendor/bin/codecept build
 ```
+
+* Acrescentar o código abaixo como primeira instrução PHP do arquivo **vendor/bin/codecept**:
+```
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('America/Sao_Paulo');
+}
+```
+
+#### Configuração da URL
+
+```
+defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', **'/basic/web/index-test.php'**);
+```
+
+
+Manual de marcações do README.md http://en.wikipedia.org/wiki/Markdown.
