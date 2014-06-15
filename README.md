@@ -62,7 +62,7 @@ if (!ini_get('date.timezone')) {
 #### Configuração da URL
 
 ```
-defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', **'/basic/web/index-test.php'**);
+defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', <b>'/basic/web/index-test.php'</b>);
 ```
 
 
