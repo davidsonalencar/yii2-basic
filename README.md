@@ -2,9 +2,9 @@
 
 ## Instalação
 
-1. Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
+### Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
 
-2. Preparar projeto:
+### Preparar projeto:
 
 * No NetBeans ir no menu **Equipe > Git > Clonar...**
 
@@ -16,7 +16,7 @@
 
 * No campo **Pasta da Fonte** informe o local onde foi realizado o clone do código fonte. No campo **Versão PHP** seleciona *PHP 5.4* ou superior. Clique em **Finalizar**.
 
-3. Instalando dependências:
+### Instalando dependências:
 
 * Via command line, acesse o diretório onde foi realizado o clone do código fonte e execute o comando abaixo para criar o arquivo **composer.phar**: 
 ```
