@@ -72,5 +72,4 @@ Também garantir que a linha abaixo do arquivo **tests/acceptance.suite.yml** es
         url: 'http://localhost'
 ```
 
-
 Manual de marcações do README.md http://en.wikipedia.org/wiki/Markdown.
