@@ -1,4 +1,4 @@
-# YII-BASIC
+# YII2-BASIC
 
 ## Instalação
 
@@ -71,6 +71,5 @@ Também garantir que a linha abaixo do arquivo **tests/acceptance.suite.yml** es
     PhpBrowser:
         url: 'http://localhost'
 ```
-
 
 Manual de marcações do README.md http://en.wikipedia.org/wiki/Markdown.
