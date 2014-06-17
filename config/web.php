@@ -10,6 +10,12 @@ $config = [
     'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
     'timezone' => 'America/Sao_Paulo',
     'components' => [
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'baseUrl' => '/yii2-basic'
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
