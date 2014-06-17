@@ -1,4 +1,4 @@
-# YII-BASIC
+# YII2-BASIC
 
 ## Instalação
 
