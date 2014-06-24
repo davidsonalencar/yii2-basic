@@ -1,5 +1,16 @@
 # YII2-BASIC
 
+## Pré-requisitos
+
+### PHP 5.4 ou superior
+
+### Extensões do PHP habilitadas:
+
+* mysql
+* openssl
+* mbstring
+* curl
+
 ## Instalação
 
 ### API de desenvolvimento:
