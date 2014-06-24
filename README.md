@@ -10,6 +10,7 @@
 * openssl
 * mbstring
 * curl
+* gd2
 
 ## Instalação
 
