@@ -20,7 +20,11 @@ Acrescentar no arquivo php.ini a seguinte informação:
 apc.enable_cli = 1
 ```
 
-### Desabilitar Expose PHP
+Desabilitar Expose PHP:
+```
+[apc]
+expose_php = Off
+```
 
 ## Instalação
 
