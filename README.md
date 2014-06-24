@@ -6,11 +6,20 @@
 
 ### Extensões do PHP habilitadas:
 
-* mysql
+* php_mysql
 * openssl
 * mbstring
 * curl
 * gd2
+* intl
+* apc (Se for 5.4, fazer download em http://downloads.php.net/pierre/php_apc-3.1.10-5.4-vc9-x86.zip)
+Acrescentar no arquivo php.ini a seguinte informação:
+```
+[apc]
+apc.enable_cli = 1
+```
+
+### Desabilitar Expose PHP
 
 ## Instalação
 
