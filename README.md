@@ -2,28 +2,30 @@
 
 ## Pré-requisitos
 
-### PHP 5.4 ou superior
+<ul>
+    <li>PHP 5.4 ou superior</li>
+    <li>Extensões do PHP habilitadas:
+        <ul>
+            <li>php_mysql</li>
+            <li>openssl</li>
+            <li>mbstring</li>
+            <li>curl</li>
+            <li>gd2</li>
+            <li>intl</li>
+            <li>apc (veja a descrição logo abaixo)</li>
+        </ul>
+    </li>
+</ul>
 
-### Extensões do PHP habilitadas:
-
-* php_mysql
-* openssl
-* mbstring
-* curl
-* gd2
-* intl
-* apc (Se for 5.4, fazer download em http://downloads.php.net/pierre/php_apc-3.1.10-5.4-vc9-x86.zip)
-
-Acrescentar no arquivo php.ini a seguinte informação:
+Caso esteja utilizando o PHP 5.4, deverá realizar o [download](http://downloads.php.net/pierre/php_apc-3.1.10-5.4-vc9-x86.zip) do APC Cache. O PHP 5.5 está com o APC Cache nativo. Por fim, em ambas as versões do PHP, acrescentar no arquivo php.ini o parâmetro abaixo para habilitar o cliente do [APC Cache](http://php.net/manual/pt_BR/book.apc.php) no YII2:
 ```
 [apc]
 apc.enable_cli = 1
 ```
 
-Desabilitar Expose PHP:
+Desabilitar [Expose PHP](http://lv1.php.net/manual/en/ini.core.php#ini.expose-php):
 ```
-[apc]
-expose_php = Off
+expose_php = 0
 ```
 
 ## Instalação
