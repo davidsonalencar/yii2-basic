@@ -38,7 +38,7 @@ class LoginForm extends Model
     public function validatePassword()
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
+            $user = $this->getOperador();
 
             if (!$user || !$user->validatePassword($this->password)) {
                 $this->addError('password', 'Incorrect username or password.');
@@ -53,7 +53,7 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+            return Yii::$app->user->login($this->getOperador(), $this->rememberMe ? 3600*24*30 : 0);
         } else {
             return false;
         }
@@ -62,12 +62,12 @@ class LoginForm extends Model
     /**
      * Finds user by [[username]]
      *
-     * @return User|null
+     * @return Operador|null
      */
-    public function getUser()
+    public function getOperador()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Operador::findByNome($this->username);
         }
 
         return $this->_user;
