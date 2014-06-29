@@ -13,8 +13,7 @@ $config = [
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'baseUrl' => '/yii2-basic'
+            'showScriptName' => false
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
