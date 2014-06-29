@@ -28,6 +28,29 @@ Desabilitar [Expose PHP](http://lv1.php.net/manual/en/ini.core.php#ini.expose-ph
 expose_php = 0
 ```
 
+## Preparação
+
+Criar uma Alias chamada **/yii2-basic** de **/yii2-basic/web** no arquivo de configuração httpd.conf, como mostro no exemplo abaixo:
+```
+Alias /yii2-basic "/webRoot/yii2-basic/web"
+<Directory "/webRoot/yii2-basic/web">
+   Options Indexes FollowSymLinks Includes
+   AllowOverride All
+   Order allow,deny
+   Allow from all
+</Directory>
+```
+
+Altere em **<Directory />**, AllowOverride None para AllowOverride All
+```
+<Directory />
+    Options FollowSymLinks
+    AllowOverride All
+    Order deny,allow
+    Deny from all
+</Directory>
+```
+
 ## Instalação
 
 ### API de desenvolvimento:
