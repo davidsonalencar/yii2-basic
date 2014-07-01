@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "operador".
  *
  * @property integer $id_operador
- * @property string $operador
+ * @property string $nome
  * @property string $senha
  * @property string $dt_ultimo_acesso
  * @property string $ip_acesso
@@ -37,7 +37,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
             [['id_operador', 'operador', 'senha', 'ip_acesso'], 'required'],
             [['id_operador'], 'integer'],
             [['dt_ultimo_acesso'], 'safe'],
-            [['operador'], 'string', 'max' => 20],
+            [['nome'], 'string', 'max' => 20],
             [['senha'], 'string', 'max' => 32],
             [['ip_acesso', 'ip_ultimo_acesso'], 'string', 'max' => 15],
             [['ip_restrito'], 'string', 'max' => 250]
@@ -50,7 +50,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     public function attributeLabels() {
         return [
             'id_operador' => Yii::t('app', 'Id Operador'),
-            'operador' => Yii::t('app', 'Operador'),
+            'nome' => Yii::t('app', 'Operador'),
             'senha' => Yii::t('app', 'Senha'),
             'dt_ultimo_acesso' => Yii::t('app', 'Dt Último Acesso'),
             'ip_acesso' => Yii::t('app', 'Ip Acesso'),
@@ -159,7 +159,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
      */
     public static function findByNome($username) {
         // mudar para operador para nome
-        return static::findOne(array('operador' => $username/* , 'status_id' => static::STATUS_ACTIVE */));
+        return static::findOne(array('nome' => $username/* , 'status_id' => static::STATUS_ACTIVE */));
     }
 
     /**
@@ -169,7 +169,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
      */
     protected function generateAuthKey() {
         $parts = array(
-            $this->operador,
+            $this->nome,
             $this->senha,
             $this->ip_acesso
         );
