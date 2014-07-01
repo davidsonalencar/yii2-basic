@@ -41,13 +41,12 @@ Alias /yii2-basic "/webRoot/yii2-basic/web"
 </Directory>
 ```
 
-Altere em **<Directory />**, AllowOverride None para AllowOverride All
+Altere em **<Directory "webRoot">**, AllowOverride None para AllowOverride All
 ```
-<Directory />
-    Options FollowSymLinks
+<Directory "D:/Webserver/apache/htdocs">
+    ...
     AllowOverride All
-    Order deny,allow
-    Deny from all
+    ...
 </Directory>
 ```
 
