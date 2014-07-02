@@ -9,9 +9,8 @@ use Yii;
  *
  * @property integer $id_direito
  * @property integer $id_direito_pai
- * @property string $modulo
- * @property string $controlador
- * @property string $acao
+ * @property string $label
+ * @property string $url
  * @property integer $posicao
  *
  * @property Direito $direitoPai
@@ -37,9 +36,10 @@ class Direito extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_direito', 'controlador', 'acao', 'posicao'], 'required'],
-            [['id_direito', 'id_direito_pai', 'posicao'], 'integer'],
-            [['modulo', 'controlador', 'acao'], 'string', 'max' => 45]
+            [['id_direito_pai', 'posicao'], 'integer'],
+            [['label', 'url', 'posicao'], 'required'],
+            [['label'], 'string', 'max' => 45],
+            [['url'], 'string', 'max' => 100]
         ];
     }
 
@@ -51,9 +51,8 @@ class Direito extends \yii\db\ActiveRecord
         return [
             'id_direito' => Yii::t('app', 'Id Direito'),
             'id_direito_pai' => Yii::t('app', 'Id Direito Pai'),
-            'modulo' => Yii::t('app', 'Modulo'),
-            'controlador' => Yii::t('app', 'Controlador'),
-            'acao' => Yii::t('app', 'Acao'),
+            'label' => Yii::t('app', 'Label'),
+            'url' => Yii::t('app', 'Url'),
             'posicao' => Yii::t('app', 'Posicao'),
         ];
     }

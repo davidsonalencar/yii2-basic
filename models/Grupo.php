@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "grupo".
  *
  * @property integer $id_grupo
+ * @property string $sigla
  * @property string $nome
  * @property string $ip_restrito
  *
@@ -32,8 +33,8 @@ class Grupo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_grupo', 'nome'], 'required'],
-            [['id_grupo'], 'integer'],
+            [['sigla', 'nome'], 'required'],
+            [['sigla'], 'string', 'max' => 10],
             [['nome'], 'string', 'max' => 50],
             [['ip_restrito'], 'string', 'max' => 250]
         ];
@@ -46,6 +47,7 @@ class Grupo extends \yii\db\ActiveRecord
     {
         return [
             'id_grupo' => Yii::t('app', 'Id Grupo'),
+            'sigla' => Yii::t('app', 'Sigla'),
             'nome' => Yii::t('app', 'Nome'),
             'ip_restrito' => Yii::t('app', 'Ip Restrito'),
         ];

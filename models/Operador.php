@@ -2,91 +2,12 @@
 
 namespace app\models;
 
-use Yii;
-
-/**
- * This is the model class for table "operador".
- *
- * @property integer $id_operador
- * @property string $nome
- * @property string $senha
- * @property string $dt_ultimo_acesso
- * @property string $ip_acesso
- * @property string $ip_ultimo_acesso
- * @property string $ip_restrito
- *
- * @property OperadorDireito $operadorDireito
- * @property Direito[] $direitos
- * @property OperadorGrupo $operadorGrupo
- * @property Grupo[] $grupos
- */
-class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
+class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
     /**
-     * @inheritdoc
+     * IMPLEMENTACAO DA INTERFACE
      */
-    public static function tableName() {
-        return 'operador';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function rules() {
-        return [
-            [['id_operador', 'operador', 'senha', 'ip_acesso'], 'required'],
-            [['id_operador'], 'integer'],
-            [['dt_ultimo_acesso'], 'safe'],
-            [['nome'], 'string', 'max' => 20],
-            [['senha'], 'string', 'max' => 32],
-            [['ip_acesso', 'ip_ultimo_acesso'], 'string', 'max' => 15],
-            [['ip_restrito'], 'string', 'max' => 250]
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels() {
-        return [
-            'id_operador' => Yii::t('app', 'Id Operador'),
-            'nome' => Yii::t('app', 'Operador'),
-            'senha' => Yii::t('app', 'Senha'),
-            'dt_ultimo_acesso' => Yii::t('app', 'Dt Último Acesso'),
-            'ip_acesso' => Yii::t('app', 'Ip Acesso'),
-            'ip_ultimo_acesso' => Yii::t('app', 'Ip Último Acesso'),
-            'ip_restrito' => Yii::t('app', 'Ip Restrito'),
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOperadorDireito() {
-        return $this->hasOne(OperadorDireito::className(), ['id_operador' => 'id_operador']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDireitos() {
-        return $this->hasMany(Direito::className(), ['id_direito' => 'id_direito'])->viaTable('operador_direito', ['id_operador' => 'id_operador']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOperadorGrupo() {
-        return $this->hasOne(OperadorGrupo::className(), ['id_operador' => 'id_operador']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getGrupos() {
-        return $this->hasMany(Grupo::className(), ['id_grupo' => 'id_grupo'])->viaTable('operador_grupo', ['id_operador' => 'id_operador']);
-    }
-
+    
     /**
      * @inheritdoc
      * @return string Chave de autenticação de usuário atual
@@ -114,8 +35,6 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     }
 
     /**
-     * Encontra uma identidade pelo ID informado.
-     * 
      * @inheritdoc
      * @param integer $id O ID que deve ser encontrado
      * @return \app\models\Operador|null O objeto da identidade Operador correspondente ao ID informado.
@@ -142,6 +61,24 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     }
 
     /**
+     * PERSISTENCIA
+     */
+    
+    /**
+     * @auth
+     * @param string $username user name.
+     * @return null|\yii\db\ActiveRecord user instance.
+     */
+    public static function findByNome($username) {
+        // mudar para operador para nome
+        return static::findOne(array('nome' => $username/* , 'status_id' => static::STATUS_ACTIVE */));
+    }    
+    
+    /**
+     * REGRAS DE NEGÓCIO
+     */
+
+    /**
      * Valida a senha informada
      *
      * @param  string  $password password to validate
@@ -151,17 +88,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         return $this->senha === sha1($senha);
         //return Security::validatePassword($senha, $this->password_hash);
     }
-
-    /**
-     * @auth
-     * @param string $username user name.
-     * @return null|\yii\db\ActiveRecord user instance.
-     */
-    public static function findByNome($username) {
-        // mudar para operador para nome
-        return static::findOne(array('nome' => $username/* , 'status_id' => static::STATUS_ACTIVE */));
-    }
-
+    
     /**
      * @auth
      * Generates auth key.
@@ -175,5 +102,16 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         );
         return sha1(implode('/', $parts));
     }
-
+    
+    /**
+     * 
+     */
+    private function getMenuRecursivo() {
+        
+    }
+    
+    public function getMenu() {
+        
+    }
+    
 }
