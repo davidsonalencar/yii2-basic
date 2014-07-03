@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use \yii\helpers\ArrayHelper;
+
 class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
     /**
@@ -35,6 +37,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
     }
 
     /**
+     * 
      * @inheritdoc
      * @param integer $id O ID que deve ser encontrado
      * @return \app\models\Operador|null O objeto da identidade Operador correspondente ao ID informado.
@@ -56,10 +59,11 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * @return \app\models\Operador|null O objeto da identidade Operador correspondente ao token informado.
      */
     public static function findIdentityByAccessToken($token) {
+        $token = null;
         //return static::findOne(['access_token' => $token]);
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
-
+    
     /**
      * PERSISTENCIA
      */
@@ -81,7 +85,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
     /**
      * Valida a senha informada
      *
-     * @param  string  $password password to validate
+     * @param string $senha password to validate
      * @return boolean if password provided is valid for current user
      */
     public function validatePassword($senha) {
@@ -104,13 +108,89 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
     }
     
     /**
-     * 
+     * @param Direito[] $direitos
+     * @return []
      */
-    private function getMenuRecursivo() {
+    private function getMenuRecursivo( $direitos ) {
+        
+        $result = [];
+        
+        foreach ($direitos as $direito) {
+            
+            $item = [
+                'label' => $direito->label,
+                'url' => [$direito->url]
+            ];
+            
+            if (count($direito->direitos) > 0) {
+                $item['items'] = $this->getMenuRecursivo( $direito->direitos );
+            }
+            
+            $result[] = $item;
+                    
+        }
+        
+        return $result;
         
     }
     
+    /**
+     * Usado em app\components\yii\web\Controller
+     * @return []
+     */
     public function getMenu() {
+        
+        $result = [];
+        
+        if (count($this->direitos) > 0) {
+            $result = $this->getMenuRecursivo( $this->direitos );
+        }
+        
+        return $result; 
+        
+    }
+    
+    /**
+     * 
+     * @param Direito[] $direitos
+     * @param string $moduleId
+     * @param string $controllerId
+     * @return []
+     */
+    private function getAcoesRecursivo( $direitos, $moduleId, $controllerId ) {
+        
+        $result = [];
+        
+        foreach ($direitos as $direito) {
+        
+            if ($direito->getModule() === $moduleId && 
+                $direito->getController() === $controllerId) {
+                $result[] = $direito->getAction();
+            }
+                    
+            if (count($direito->direitos) > 0) {
+                
+                $acoes = $this->getAcoesRecursivo( $direito->direitos, $moduleId, $controllerId );
+                
+                $result = ArrayHelper::merge( $result, $acoes );
+                
+            }
+
+        }
+        
+        return $result;
+        
+    }
+    
+    public function getAcoes( $moduleId, $controllerId ) {
+        
+        $result = [];
+        
+        if (count($this->direitos) > 0) {
+            $result = $this->getAcoesRecursivo( $this->direitos, $moduleId, $controllerId );
+        }
+        
+        return $result; 
         
     }
     
