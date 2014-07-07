@@ -9,7 +9,7 @@ use app\models\ContactForm;
 class SiteController extends \app\components\yii\web\Controller {
 
     public function behaviors() {
-        
+
         return [
             'access' => $this->getAccessControl(),
             'verbs' => $this->getVerbFilter([
@@ -19,7 +19,7 @@ class SiteController extends \app\components\yii\web\Controller {
             ]),
         ];
     }
-    
+
     public function actions() {
         return [
             'error' => [
@@ -45,6 +45,7 @@ class SiteController extends \app\components\yii\web\Controller {
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
+            $this->layout = 'clean';
             return $this->render('login', [
                         'model' => $model,
             ]);
