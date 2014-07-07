@@ -3,6 +3,7 @@
 namespace app\components\yii\filters;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 class AccessControl extends \yii\filters\AccessControl {
 
@@ -16,7 +17,7 @@ class AccessControl extends \yii\filters\AccessControl {
         }
         
         // Ações que não serão aplicadas das regras abaixo
-        $this->except = ['login', 'logout'];
+        $this->except = ArrayHelper::merge($this->except, ['login', 'logout']);
         
         // Faz com que todas as ações sejam acessadas somente com o usuário logado (@)
         // ['?'] = usuarios deslogados

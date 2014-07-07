@@ -16,13 +16,11 @@ echo "<?php\n";
 namespace <?= $generator->ns ?>;
 <?php endif; ?>
 
-use app\components\yii\filters\AccessControl;
-
 class <?= $generator->getControllerClass() ?> extends <?= '\\' . trim($generator->baseClass, '\\') . "\n" ?> {
 
     public function behaviors() {
         return [
-            'access' => AccessControl::className(),
+            'access' => $this->getAccessControl(),
         ];
     }
 
