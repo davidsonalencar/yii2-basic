@@ -27,6 +27,12 @@ class AccessControl extends \yii\filters\AccessControl {
             'allow' => true,
             'roles' => ['@'],
         ];
+        
+        /*$this->rules[] = [
+            'roles' => [
+                Yii::$app->controller->getRoute()
+            ]
+        ];*/
                   
         parent::init();
     }
