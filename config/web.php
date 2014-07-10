@@ -1,16 +1,13 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
-$components = require(__DIR__ . '/components.php');
-
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
     'timezone' => 'America/Sao_Paulo',
-    'components' => $components,
-    'params' => $params,
+    'components' => require(__DIR__ . '/components.php'),
+    'params' => require(__DIR__ . '/params.php'),
 ];
 
 if (YII_ENV_DEV) {

@@ -1,7 +1,5 @@
 <?php
 
-$db = require(__DIR__ . '/db.php');
-
 return [
     'urlManager' => [
         'class' => 'yii\web\UrlManager',
@@ -44,5 +42,5 @@ return [
             ],
         ],
     ],
-    'db' => $db,
+    'db' => require(__DIR__ . '/db.php'),
 ];
