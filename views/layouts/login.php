@@ -1,12 +1,12 @@
 <?php
 use yii\helpers\Html;
-use app\assets\AppAsset;
+use app\assets\LoginAsset;
 
 /**
  * @var \yii\web\View $this
  * @var string $content
  */
-AppAsset::register($this);
+LoginAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

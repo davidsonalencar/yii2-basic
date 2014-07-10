@@ -13,12 +13,12 @@ use yii\web\AssetBundle;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class LoginAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/login.css',
     ];
     public $js = [
     ];
