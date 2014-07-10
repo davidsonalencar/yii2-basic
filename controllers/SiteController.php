@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
@@ -10,14 +11,16 @@ class SiteController extends \app\components\yii\web\Controller {
 
     public function behaviors() {
 
-        return [
-            'access' => $this->getAccessControl(),
-            'verbs' => $this->getVerbFilter([
-                'actions' => [
-                    'logout' => ['post'],
-                ]
-            ]),
+        $config = parent::behaviors();
+        
+        $config['verbs'] = [
+            'class' => VerbFilter::className(),
+            'actions' => [
+                'logout' => ['post'],
+            ],
         ];
+        
+        return $config;
     }
 
     public function actions() {

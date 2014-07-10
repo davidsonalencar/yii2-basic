@@ -41,25 +41,14 @@ class Controller extends \yii\web\Controller {
     }
     
     /**
-     * Retorna o controle de accesso customizado para aplicação
-     * 
-     * @param array $config name-value pairs that will be used to initialize the object properties
-     * @return \app\components\yii\filters\AccessControl
+     * @inheritdoc
      */
-    public function getAccessControl($config = array()) {
+    public function behaviors() {
         
-        return new AccessControl($config);
-    }
- 
-    /**
-     * Centraliza a class de verbs
-     * 
-     * @param array $config name-value pairs that will be used to initialize the object properties
-     * @return \yii\filters\VerbFilter
-     */
-    public function getVerbFilter($config = array()){
+        return [
+            'access' => AccessControl::className(),
+        ];
         
-        return new VerbFilter($config);
     }
     
 }
