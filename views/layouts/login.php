@@ -1,4 +1,5 @@
 <?php
+
 use yii\helpers\Html;
 use app\assets\LoginAsset;
 
@@ -11,28 +12,26 @@ LoginAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+    </head>
+    <body>
 
-<?php $this->beginBody() ?>
-    <div class="wrap">
-        <div class="container">
+        <?php $this->beginBody() ?>
+        
+        <div class="wrap">
             <?= $content ?>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-center text-center">&copy; My Company <?= date('Y') ?></p>
-        </div>
-    </footer>
+        <footer class="footer">
+            <p class="pull-center text-center">&copy; My Company <?= date('Y') ?>. System Named.</p>
+        </footer>
 
-<?php $this->endBody() ?>
-</body>
+        <?php $this->endBody() ?>
+        
+    </body>
 </html>
 <?php $this->endPage() ?>

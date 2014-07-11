@@ -81,4 +81,5 @@ return array(
     '{attribute} should contain {length, number} {length, plural, one{character} other{characters}}.' => '“{attribute}” deve conter {length, number} {length, plural, one{caractere} other{caracteres}}.',
     'Password' => 'Senha',
     'Username' => 'Usuário',
+    'Keep me logged' => 'Continuar logado',
 );
