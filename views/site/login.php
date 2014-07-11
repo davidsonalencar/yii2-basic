@@ -28,7 +28,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'username', [
         'inputOptions' => [
             'placeholder' => Yii::t('app', 'Username'),
-            'class' => 'form-control'
+            'class' => 'form-control',
+            'autofocus' => '',
         ]
     ]) ?>
 
