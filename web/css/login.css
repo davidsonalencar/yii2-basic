@@ -21,6 +21,21 @@ body {
     width: 300px;
 }
 
+.footer {
+    height: 25px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: 0 transparent none;
+    background: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+}
+
+.footer .container p {
+    margin-bottom: 0;
+}
+
 .login-panel .logo {
     width: 109px;
     margin-bottom: 25px;
@@ -48,93 +63,50 @@ body {
     margin-left: -18px;
 }
 
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline,
-.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline{
+.login-panel .has-error .help-block,
+.login-panel .has-error .control-label,
+.login-panel .has-error .radio,
+.login-panel .has-error .checkbox,
+.login-panel .has-error .radio-inline,
+.login-panel .has-error .checkbox-inline,
+.login-panel .has-success .help-block,
+.login-panel .has-success .control-label,
+.login-panel .has-success .radio,
+.login-panel .has-success .checkbox,
+.login-panel .has-success .radio-inline,
+.login-panel .has-success .checkbox-inline{
   color: #ffffff;
 }
 
-.has-error .form-control,
-.has-success .form-control{
+.login-panel .has-error .form-control,
+.login-panel .has-success .form-control{
   border-color: #cccccc;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.has-error .form-control:focus,
-.has-success .form-control:focus{
+.login-panel .has-error .form-control:focus,
+.login-panel .has-success .form-control:focus{
   border-color: #66afe9;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-.footer {
-    height: 25px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border: 0 transparent none;
-    background: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 11px;
-}
-
-.footer .container p {
-    margin-bottom: 0;
-}
-
-.btn {
+.login-panel .btn {
     -webkit-transition: all 0.2s ease-out 0s;
             transition: all 0.2s ease-out 0s;
 }
 
-.btn-primary {
+.login-panel .btn-primary {
     background: none repeat scroll 0 0 #0972dd;
     border: 1px solid #0c57a3;
     color: #fff;
 }
 
-.btn-primary:hover {
+.login-panel .btn-primary:hover {
     background: none repeat scroll 0 0 #1e82e8;
 }
 
-.btn-lg {
+.login-panel .btn-lg {
     border-radius: 0;
 }
-
-/*
-.form-control {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #555555;
-  vertical-align: middle;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-
-.form-control:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-*/

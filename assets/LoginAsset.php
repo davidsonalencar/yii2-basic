@@ -20,6 +20,7 @@ class LoginAsset extends AssetBundle
     public $baseImg = '@web/imgs';
     public $css = [
         'css/login.css',
+        'css/animate.css',
     ];
     public $js = [
     ];
