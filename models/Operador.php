@@ -58,7 +58,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * @param string $token O token que deve ser encontrado
      * @return \app\models\Operador|null O objeto da identidade Operador correspondente ao token informado.
      */
-    public static function findIdentityByAccessToken($token) {
+    public static function findIdentityByAccessToken($token, $type = null) {
         $token = null;
         //return static::findOne(['access_token' => $token]);
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');

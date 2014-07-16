@@ -1,8 +1,8 @@
 <?php
 
-//namespace app\components\yii\web;
+namespace app\components\yii\web;
 
-namespace yii\web;
+//namespace yii\web;
 
 use Yii;
 use app\components\yii\filters\AccessControl;

@@ -3,7 +3,7 @@
 /**
  * @package yii\web
  */
-Yii::$classMap['yii\web\Controller'] = '@app/components/yii/web/Controller.php';
+//Yii::$classMap['yii\web\Controller'] = '@app/components/yii/web/Controller.php';
 
 /**
  * @package yii\helpers
