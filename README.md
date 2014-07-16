@@ -102,7 +102,7 @@ php composer.phar require --dev "codeception/codeception: 1.8.*@dev" "codeceptio
 vendor/bin/codecept build
 ```
 
-* Acrescentar o código abaixo como primeira instrução PHP do arquivo **vendor/bin/codecept**:
+* Acrescentar o código abaixo como primeira instrução PHP do arquivo **vendor/codeception/codeception/codecept**:
 ```
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('America/Sao_Paulo');
