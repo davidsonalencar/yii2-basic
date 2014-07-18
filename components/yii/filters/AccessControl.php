@@ -17,22 +17,22 @@ class AccessControl extends \yii\filters\AccessControl {
         }
         
         // Ações que não serão aplicadas das regras abaixo
-        $this->except = ArrayHelper::merge($this->except, ['login', 'logout']);
+        $this->except = ArrayHelper::merge($this->except, ['login', 'logout', 'error']);
         
         // Faz com que todas as ações sejam acessadas somente com o usuário logado (@)
         // ['?'] = usuarios deslogados
         // ['@'] = usuarios logados
-        $this->rules[] = [
-            'actions' => $actions,
-            'allow' => true,
-            'roles' => ['@'],
-        ];
+//        $this->rules[] = [
+//            'actions' => $actions,
+//            'allow' => true,
+//            'roles' => ['@'],
+//        ];
         
-        /*$this->rules[] = [
+        $this->rules[] = [
             'roles' => [
-                Yii::$app->controller->getRoute()
+                '/'.Yii::$app->controller->getRoute()
             ]
-        ];*/
+        ];
                   
         parent::init();
     }

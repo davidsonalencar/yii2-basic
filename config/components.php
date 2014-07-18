@@ -6,6 +6,12 @@ return [
         'enablePrettyUrl' => true,
         'showScriptName' => false,
     ],
+    'authManager' => [
+        'class' => 'app\components\yii\rbac\DbManager',
+        'defaultRoles' => [
+            '/site/error'
+        ]
+    ],
     'cache' => [
         'class' => 'yii\caching\FileCache',
     ],
