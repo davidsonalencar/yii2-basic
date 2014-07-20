@@ -43,7 +43,9 @@ class Controller extends \yii\web\Controller {
     public function behaviors() {
 
         return [
-            'access' => AccessControl::className(),
+            'access' => [
+                'class' => AccessControl::className(),
+            ]
         ];
     }
 

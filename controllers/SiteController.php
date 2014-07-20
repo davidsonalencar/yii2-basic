@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\helpers\ArrayHelper;
 
 class SiteController extends \app\components\yii\web\Controller {
 
@@ -19,6 +20,21 @@ class SiteController extends \app\components\yii\web\Controller {
                 'logout' => ['post'],
             ],
         ];
+        
+        $config['access'] = ArrayHelper::merge($config['access'], [
+            'rules' => [
+                [
+                    'allow' => true,
+                    'actions' => ['login'],
+                    'roles' => ['?'],
+                ],
+                [
+                    'allow' => true,
+                    'actions' => ['logout'],
+                    'roles' => ['@'],
+                ],
+            ]
+        ]);
         
         return $config;
     }

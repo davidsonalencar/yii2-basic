@@ -150,48 +150,4 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
         
     }
     
-    /**
-     * 
-     * @param Direito[] $direitos
-     * @param string $moduleId
-     * @param string $controllerId
-     * @return []
-     */
-    private function getAcoesRecursivo( $direitos, $moduleId, $controllerId ) {
-        
-        $result = [];
-        
-        foreach ($direitos as $direito) {
-        
-            if ($direito->getModule() === $moduleId && 
-                $direito->getController() === $controllerId) {
-                $result[] = $direito->getAction();
-            }
-                    
-            if (count($direito->direitos) > 0) {
-                
-                $acoes = $this->getAcoesRecursivo( $direito->direitos, $moduleId, $controllerId );
-                
-                $result = ArrayHelper::merge( $result, $acoes );
-                
-            }
-
-        }
-        
-        return $result;
-        
-    }
-    
-    public function getAcoes( $moduleId, $controllerId ) {
-        
-        $result = [];
-        
-        if (count($this->direitos) > 0) {
-            $result = $this->getAcoesRecursivo( $this->direitos, $moduleId, $controllerId );
-        }
-        
-        return $result; 
-        
-    }
-    
 }

@@ -9,7 +9,7 @@ return [
     'authManager' => [
         'class' => 'app\components\yii\rbac\DbManager',
         'defaultRoles' => [
-            '/site/error'
+            'error',
         ]
     ],
     'cache' => [

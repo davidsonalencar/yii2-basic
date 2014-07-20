@@ -3,38 +3,35 @@
 namespace app\components\yii\filters;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 
 class AccessControl extends \yii\filters\AccessControl {
 
-    function init() {
-                
-        $actions = [];
+    /**
+     * @inheritdoc
+     */
+    public function init() {
         
-        // Pega as ações permitidas para um controller de um determinado module
-        if (!Yii::$app->user->isGuest) {
-            $actions = Yii::$app->user->identity->getAcoes( Yii::$app->controller->module->id, Yii::$app->controller->id );
-        }
-        
-        // Ações que não serão aplicadas das regras abaixo
-        $this->except = ArrayHelper::merge($this->except, ['login', 'logout', 'error']);
-        
-        // Faz com que todas as ações sejam acessadas somente com o usuário logado (@)
-        // ['?'] = usuarios deslogados
-        // ['@'] = usuarios logados
-//        $this->rules[] = [
-//            'actions' => $actions,
-//            'allow' => true,
-//            'roles' => ['@'],
-//        ];
-        
-        $this->rules[] = [
-            'roles' => [
-                '/'.Yii::$app->controller->getRoute()
-            ]
-        ];
+        $this->initRules();
                   
         parent::init();
+    }
+    
+    /**
+     * Inicializa rules, para controle de acesso as páginas.
+     * A propriedade $roles receberá a rota da página (ex.: site/index) para 
+     * verificar se tem permissão de acessa-la.
+     * Essa checagem está sendo verificasa junto a classe app\components\yii\rbac\DbManager
+     * e a classe yii\filters\AccessRule.
+     */
+    private function initRules() {
+        
+        $this->rules[] = [
+            'allow' => true,
+            'roles' => [
+                Yii::$app->controller->getRoute(),
+            ]
+        ];
+        
     }
     
 }
