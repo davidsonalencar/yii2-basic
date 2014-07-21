@@ -3,9 +3,14 @@
 namespace app\models;
 
 use \yii\helpers\ArrayHelper;
+use Yii;
 
 class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
+    public $authKey;
+    
+    protected $cacheKeyName = '__user';
+    
     /**
      * IMPLEMENTACAO DA INTERFACE
      */
@@ -15,6 +20,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * @return string Chave de autenticação de usuário atual
      */
     public function getAuthKey() {
+        
         return $this->generateAuthKey();
     }
 
@@ -43,12 +49,17 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * @return \app\models\Operador|null O objeto da identidade Operador correspondente ao ID informado.
      */
     public static function findIdentity($id) {
-        return static::findOne($id);
-
-//        if (is_object($user)) {;
-//            $user->updateLastVisitTime();
-//        }
-//        return $user;
+        
+        $cache = static::getCacheComponent();
+        
+        $identity = @unserialize($cache->get('operador:'.$id));
+        
+        if ($identity === false) {
+            
+            $identity = static::findOne($id);
+            $cache->set('operador:'.$id, @serialize($identity));
+        }
+        return $identity;
     }
 
     /**
@@ -148,6 +159,37 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
         
         return $result; 
         
+    }
+    
+    
+    /**
+     * Set a value in cache
+     * @param $key
+     * @param $value
+     * @return mixed
+     */
+    protected function setCache() {
+        
+        return $this->resolveCacheComponent()->set('operador'.$this->getId(), @serialize($this), 3600 * 24 * 30);
+    }
+    
+    /**
+     * Set a value in cache
+     * @param $key
+     * @param $value
+     * @return mixed
+     */
+    protected static function getCache() {
+        
+        return $this->resolveCacheComponent()->set('operador'.$this->getId(), @serialize($this), 3600 * 24 * 30);
+    }
+    
+    /**
+     * Returns cache component configured as in cacheId
+     * @return Cache
+     */
+    protected static function getCacheComponent() {
+        return Yii::$app->getCache();
     }
     
 }

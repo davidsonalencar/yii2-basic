@@ -7,7 +7,7 @@ return [
         'showScriptName' => false,
     ],
     'authManager' => [
-        'class' => 'app\components\yii\rbac\DbManager',
+        'class' => 'yii\rbac\DbManager',
         'defaultRoles' => [
             'error',
         ]
@@ -16,6 +16,7 @@ return [
         'class' => 'yii\caching\FileCache',
     ],
     'user' => [
+        'class' => 'app\components\yii\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
     ],

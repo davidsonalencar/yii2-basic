@@ -66,7 +66,7 @@ class SiteController extends \app\components\yii\web\Controller {
         } else {
             $this->layout = 'login';
             return $this->render('login', [
-                        'model' => $model,
+                'model' => $model,
             ]);
         }
     }
