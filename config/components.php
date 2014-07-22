@@ -7,10 +7,7 @@ return [
         'showScriptName' => false,
     ],
     'authManager' => [
-        'class' => 'yii\rbac\DbManager',
-        'defaultRoles' => [
-            'error',
-        ]
+        'class' => 'app\components\yii\rbac\DbManager',
     ],
     'cache' => [
         'class' => 'yii\caching\FileCache',
