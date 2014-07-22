@@ -7,10 +7,6 @@ use Yii;
 
 class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
-    public $authKey;
-    
-    protected $cacheKeyName = '__user';
-    
     /**
      * IMPLEMENTACAO DA INTERFACE
      */
@@ -50,15 +46,23 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      */
     public static function findIdentity($id) {
         
+        $identity = false;
+        
         $cache = static::getCacheComponent();
         
-        $identity = @unserialize($cache->get('operador:'.$id));
+        $cookie = Yii::$app->user->getCookieIdentity();
+        
+        if ($cookie !== null && $cookie[0] === $id) {
+            
+            $identity = @unserialize($cache->get('operador:'.$cookie[1]));
+        }
         
         if ($identity === false) {
             
             $identity = static::findOne($id);
-            $cache->set('operador:'.$id, @serialize($identity));
+            $cache->set('operador:'.$identity->getAuthKey(), @serialize($identity));
         }
+        
         return $identity;
     }
 
@@ -101,7 +105,6 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      */
     public function validatePassword($senha) {
         return $this->senha === sha1($senha);
-        //return Security::validatePassword($senha, $this->password_hash);
     }
     
     /**
@@ -110,6 +113,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * @return string auth key.
      */
     protected function generateAuthKey() {
+        
         $parts = array(
             $this->nome,
             $this->senha,
@@ -160,32 +164,9 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
         return $result; 
         
     }
-    
-    
+   
     /**
-     * Set a value in cache
-     * @param $key
-     * @param $value
-     * @return mixed
-     */
-    protected function setCache() {
-        
-        return $this->resolveCacheComponent()->set('operador'.$this->getId(), @serialize($this), 3600 * 24 * 30);
-    }
-    
-    /**
-     * Set a value in cache
-     * @param $key
-     * @param $value
-     * @return mixed
-     */
-    protected static function getCache() {
-        
-        return $this->resolveCacheComponent()->set('operador'.$this->getId(), @serialize($this), 3600 * 24 * 30);
-    }
-    
-    /**
-     * Returns cache component configured as in cacheId
+     * Returns cache component configured as in config
      * @return Cache
      */
     protected static function getCacheComponent() {
