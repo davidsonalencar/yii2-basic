@@ -20,6 +20,14 @@ class User extends \yii\web\User {
         return $access;
         
     }
+    
+    protected function beforeLogin($identity, $cookieBased, $duration) {
+        parent::beforeLogin($identity, $cookieBased, $duration);
+        
+        $identity->generateAuthKey();
+        
+        return true;
+    }
    
     /**
      * Retorna dados do usuário gravados em cookie, como id, authKey e duração.

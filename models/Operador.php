@@ -8,6 +8,13 @@ use Yii;
 class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
     /**
+     * @var array php cache
+     */
+    protected $cachedData = [];
+    
+    private $cachedAuthKey;
+    
+    /**
      * IMPLEMENTACAO DA INTERFACE
      */
     
@@ -19,7 +26,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
         
         return $this->generateAuthKey();
     }
-
+    
     /**
      * @inheritdoc
      * @return integer Retorna o ID do operador
@@ -46,21 +53,12 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      */
     public static function findIdentity($id) {
         
-        $identity = false;
-        
-        $cache = static::getCacheComponent();
-        
-        $cookie = Yii::$app->user->getCookieIdentity();
-        
-        if ($cookie !== null && $cookie[0] === $id) {
-            
-            $identity = @unserialize($cache->get('operador:'.$cookie[1]));
-        }
+        $identity = @unserialize(static::getCache('identity:'.$id));
         
         if ($identity === false) {
             
             $identity = static::findOne($id);
-            $cache->set('operador:'.$identity->getAuthKey(), @serialize($identity));
+            static::setCache('identity:'.$id, @serialize($identity));
         }
         
         return $identity;
@@ -112,7 +110,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * Generates auth key.
      * @return string auth key.
      */
-    protected function generateAuthKey() {
+    public function generateAuthKey() {
         
         $parts = array(
             $this->nome,
@@ -169,8 +167,49 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      * Returns cache component configured as in config
      * @return Cache
      */
-    protected static function getCacheComponent() {
+    public static function getCacheComponent() {
         return Yii::$app->getCache();
     }
-    
+
+    /**
+     * Set a value in cache
+     * @param $key
+     * @param $value
+     * @return mixed
+     */
+    public static function setCache($key, $value) {
+        /*$this->cachedData = $this->getCacheComponent()->get( Operador::className() );
+        if (empty($this->cachedData)) {
+            $this->cachedData = [];
+        }
+        $this->cachedData[$key] = $value;*/
+        
+        
+        $cachedData = static::getCacheComponent()->get( Operador::className() );
+        if (empty($cachedData)) {
+            $cachedData = [];
+        }
+        $cachedData[$key] = $value;
+        
+        return static::getCacheComponent()->set(Operador::className(), $cachedData);
+    }
+
+    /**
+     * Get cached value
+     * @param $key
+     * @return mixed
+     */
+    public static function getCache($key) {
+        /*$cached = ArrayHelper::getValue($this->cachedData, $key);
+        if (!isset($cached)) {
+            $cacheData = $this->getCacheComponent()->get( Operador::className() );
+            $cached = $this->cachedData[$key] = ArrayHelper::getValue($cacheData, $key);
+        }
+        return $cached;*/
+        $cacheData = static::getCacheComponent()->get( Operador::className() );
+        $cached = $cachedData[$key] = ArrayHelper::getValue($cacheData, $key);
+        
+        return $cached;
+    }
+
 }
