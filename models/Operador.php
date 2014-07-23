@@ -53,12 +53,12 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
      */
     public static function findIdentity($id) {
         
-        $identity = @unserialize(static::getCache('identity:'.$id));
+        $identity = @unserialize(static::resolveCache()->get('identity:'.$id));
         
         if ($identity === false) {
             
             $identity = static::findOne($id);
-            static::setCache('identity:'.$id, @serialize($identity));
+            static::resolveCache()->set('identity:'.$id, @serialize($identity));
         }
         
         return $identity;
@@ -165,51 +165,11 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
    
     /**
      * Returns cache component configured as in config
-     * @return Cache
+     * @return \app\components\yii\caching\SessionCache
      */
-    public static function getCacheComponent() {
+    public static function resolveCache() {
         return Yii::$app->getCache();
     }
 
-    /**
-     * Set a value in cache
-     * @param $key
-     * @param $value
-     * @return mixed
-     */
-    public static function setCache($key, $value) {
-        /*$this->cachedData = $this->getCacheComponent()->get( Operador::className() );
-        if (empty($this->cachedData)) {
-            $this->cachedData = [];
-        }
-        $this->cachedData[$key] = $value;*/
-        
-        
-        $cachedData = static::getCacheComponent()->get( Operador::className() );
-        if (empty($cachedData)) {
-            $cachedData = [];
-        }
-        $cachedData[$key] = $value;
-        
-        return static::getCacheComponent()->set(Operador::className(), $cachedData);
-    }
-
-    /**
-     * Get cached value
-     * @param $key
-     * @return mixed
-     */
-    public static function getCache($key) {
-        /*$cached = ArrayHelper::getValue($this->cachedData, $key);
-        if (!isset($cached)) {
-            $cacheData = $this->getCacheComponent()->get( Operador::className() );
-            $cached = $this->cachedData[$key] = ArrayHelper::getValue($cacheData, $key);
-        }
-        return $cached;*/
-        $cacheData = static::getCacheComponent()->get( Operador::className() );
-        $cached = $cachedData[$key] = ArrayHelper::getValue($cacheData, $key);
-        
-        return $cached;
-    }
 
 }
