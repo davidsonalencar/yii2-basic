@@ -10,7 +10,7 @@ class AccessControl extends \yii\filters\AccessControl {
      * @inheritdoc
      */
     public function init() {
-
+        
         $this->initRules();
                   
         parent::init();

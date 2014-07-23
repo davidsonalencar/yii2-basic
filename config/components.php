@@ -10,7 +10,7 @@ return [
         'class' => 'app\components\yii\rbac\DbManager',
     ],
     'cache' => [
-        'class' => 'yii\caching\FileCache',
+        'class' => 'app\components\yii\caching\SessionCache',
     ],
     'user' => [
         'class' => 'app\components\yii\web\User',
