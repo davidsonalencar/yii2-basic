@@ -2,18 +2,10 @@
 
 namespace app\models;
 
-use \yii\helpers\ArrayHelper;
 use Yii;
 
 class Operador extends OperadorBase implements \yii\web\IdentityInterface {
 
-    /**
-     * @var array php cache
-     */
-    protected $cachedData = [];
-    
-    private $cachedAuthKey;
-    
     /**
      * IMPLEMENTACAO DA INTERFACE
      */
