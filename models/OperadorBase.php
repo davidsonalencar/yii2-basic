@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "operador".
@@ -22,9 +23,34 @@ use Yii;
  * @property Direito[] $direitos
  * @property OperadorGrupo $operadorGrupo
  * @property Grupo[] $grupos
+ * 
  */
 class OperadorBase extends \yii\db\ActiveRecord {
 
+    public function attributes() {
+        $config = parent::attributes();
+        
+        $config = ArrayHelper::merge($config, [
+            'username',
+            'password',
+            'rememberMe'
+        ]);
+        
+        return $config;
+    }
+    
+    public function scenarios() {
+        $config = parent::scenarios();
+        
+        $config['login'] = [
+            'username',
+            'password',
+            'rememberMe'
+        ];
+        
+        return $config;
+    }
+    
     /**
      * @inheritdoc
      */
@@ -37,13 +63,25 @@ class OperadorBase extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
+            /**
+             * Scenario Default
+             */
             [['nome', 'senha', 'dt_acesso', 'ip_acesso'], 'required'],
             [['dt_acesso', 'dt_ultimo_acesso'], 'safe'],
             [['ativo'], 'integer', 'integerPattern' => '^0|1$'],
             [['nome'], 'string', 'max' => 20],
             [['senha'], 'string', 'max' => 40],
             [['ip_acesso', 'ip_ultimo_acesso'], 'string', 'max' => 15],
-            [['ip_restrito'], 'string', 'max' => 250]
+            [['ip_restrito'], 'string', 'max' => 250],
+            /**
+             * Scenario Login
+             */
+            // username and password are both required
+            [['username', 'password'], 'required', 'on' => 'login'],
+            // rememberMe must be a boolean value
+            ['rememberMe', 'boolean', 'on' => 'login'],
+            // password is validated by validatePassword()
+            ['password', 'validatePassword', 'on' => 'login'],            
         ];
     }
 

@@ -3,7 +3,6 @@
 namespace app\components\yii\rbac;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 
 class DbManager extends \yii\rbac\DbManager {
 
