@@ -22,6 +22,7 @@ return [
         'class' => 'app\components\yii\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
+        'loginUrl' => 'user/account/login',
     ],
     'i18n' => [
         'translations' => [

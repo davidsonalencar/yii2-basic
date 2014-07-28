@@ -17,7 +17,7 @@ class Controller extends \yii\web\Controller {
         if (Yii::$app->user->isGuest) {
             $this->menuItens[] = [
                 'label' => 'Login',
-                'url' => ['/site/login']
+                'url' => [Yii::$app->user->loginUrl]
             ];
         }
         // Se tiver logado
@@ -29,7 +29,7 @@ class Controller extends \yii\web\Controller {
             // Adiciona botão logout
             $this->menuItens[] = [
                 'label' => 'Logout (' . Yii::$app->user->identity->nome . ')',
-                'url' => ['/site/logout'],
+                'url' => ['user/account/logout'],
                 'linkOptions' => ['data-method' => 'post']
             ];
         }

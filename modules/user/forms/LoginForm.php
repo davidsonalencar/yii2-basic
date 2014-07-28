@@ -1,9 +1,10 @@
 <?php
 
-namespace app\models;
+namespace app\modules\user\forms;
 
 use Yii;
 use yii\base\Model;
+use app\models\Operador;
 
 /**
  * LoginForm is the model behind the login form.
@@ -60,6 +61,7 @@ class LoginForm extends Model {
      * @return boolean whether the user is logged in successfully
      */
     public function login() {
+
         if ($this->validate()) {
             return Yii::$app->user->login($this->getOperador(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {

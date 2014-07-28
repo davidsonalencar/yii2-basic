@@ -7,6 +7,11 @@ $config = [
     'timezone' => 'America/Sao_Paulo',
     'components' => require(__DIR__ . '/components.php'),
     'params' => require(__DIR__ . '/params.php'),
+    'modules' => [
+        'user' => [
+            'class' => 'app\modules\user\UserModule',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
