@@ -1,6 +1,7 @@
 <?php
 
 $config = [
+    'name' => 'My Company',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],

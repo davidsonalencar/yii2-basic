@@ -34,10 +34,9 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => Yii::$app->controller->menuItens,
-            ]);
+            
+            echo app\modules\menu\widgets\Menu::widget();
+            
             NavBar::end();
             ?>
 
