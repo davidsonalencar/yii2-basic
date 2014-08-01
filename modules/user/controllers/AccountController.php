@@ -38,8 +38,7 @@ class AccountController extends \app\components\web\Controller {
         return $config;
     }
     
-    public function actions() {
-        
+    public function actions() {        
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
