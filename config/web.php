@@ -3,6 +3,7 @@
 $config = [
     'name' => 'My Company',
     'id' => 'basic',
+    'language' => 'pt-BR',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'timezone' => 'America/Sao_Paulo',

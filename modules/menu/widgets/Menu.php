@@ -3,6 +3,7 @@
 namespace app\modules\menu\widgets;
 
 use Yii;
+use app\modules\menu\components\MenuHelper;
 
 /**
  * Description of Menu
@@ -15,9 +16,7 @@ class Menu extends \yii\bootstrap\Nav {
         
         $this->options['class'] .= ' navbar-nav navbar-right';
         
-        \yii\helpers\VarDumper::dump(Yii::$app->authManager->getPermissions());
-        
-        $this->items = Yii::$app->controller->menuItens;
+        $this->items = MenuHelper::getMenu();
         
         parent::run();
     }
