@@ -140,7 +140,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
     }
     
     /**
-     * Usado em app\components\yii\web\Controller
+     * Usado em app\components\web\Controller
      * @return []
      */
     public function getMenu() {
@@ -157,7 +157,7 @@ class Operador extends OperadorBase implements \yii\web\IdentityInterface {
    
     /**
      * Returns cache component configured as in config
-     * @return \app\components\yii\caching\SessionCache
+     * @return \app\components\caching\SessionCache
      */
     public static function resolveCache() {
         return Yii::$app->getCache();

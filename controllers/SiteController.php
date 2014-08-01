@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class SiteController extends \app\components\yii\web\Controller {
+class SiteController extends \app\components\web\Controller {
 
     public function actions() {
         return [

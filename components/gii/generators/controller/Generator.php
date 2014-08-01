@@ -28,6 +28,6 @@ class Generator extends \yii\gii\generators\controller\Generator {
     /**
      * @var string the base class of the controller
      */
-    public $baseClass = 'app\components\yii\web\Controller';
+    public $baseClass = 'app\components\web\Controller';
 
 }

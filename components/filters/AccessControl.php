@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\yii\filters;
+namespace app\components\filters;
 
 use Yii;
 
@@ -20,7 +20,7 @@ class AccessControl extends \yii\filters\AccessControl {
      * Inicializa rules, para controle de acesso as páginas.
      * A propriedade $roles receberá a rota da página (ex.: site/index) para 
      * verificar se tem permissão de acessa-la.
-     * Essa checagem está sendo verificasa junto a classe app\components\yii\rbac\DbManager
+     * Essa checagem está sendo verificasa junto a classe app\components\rbac\DbManager
      * e a classe yii\filters\AccessRule.
      */
     private function initRules() {

@@ -1,9 +1,9 @@
 <?php
 
-namespace app\components\yii\web;
+namespace app\components\web;
 
 use Yii;
-use app\components\yii\filters\AccessControl;
+use app\components\filters\AccessControl;
 
 class Controller extends \yii\web\Controller {
 

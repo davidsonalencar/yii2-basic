@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\yii\rbac;
+namespace app\components\rbac;
 
 use Yii;
 
@@ -70,7 +70,7 @@ class DbManager extends \yii\rbac\DbManager {
 
     /**
      * Returns cache component configured as in cacheId
-     * @return \app\components\yii\caching\SessionCache
+     * @return \app\components\caching\SessionCache
      */
     protected function resolveCache() {
         return Yii::$app->getCache();

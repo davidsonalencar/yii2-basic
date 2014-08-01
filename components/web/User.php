@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\yii\web;
+namespace app\components\web;
 
 use Yii;
 

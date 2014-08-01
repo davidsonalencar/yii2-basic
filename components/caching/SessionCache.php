@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\yii\caching;
+namespace app\components\caching;
 
 use Yii;
 use yii\helpers\ArrayHelper;

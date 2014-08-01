@@ -7,7 +7,7 @@ use yii\filters\VerbFilter;
 use app\modules\user\forms\LoginForm;
 use yii\helpers\ArrayHelper;
 
-class AccountController extends \app\components\yii\web\Controller {
+class AccountController extends \app\components\web\Controller {
 
     public function behaviors() {
 

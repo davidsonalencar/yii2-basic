@@ -7,7 +7,7 @@ return [
         'showScriptName' => false,
     ],
     'authManager' => [
-        'class' => 'app\components\yii\rbac\DbManager',
+        'class' => 'app\components\rbac\DbManager',
     ],
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -16,10 +16,10 @@ return [
         'cookieValidationKey' => 'c5eec1dc0b0c568db4fc2956614925bd',
     ],
     'cache' => [
-        'class' => 'app\components\yii\caching\SessionCache',
+        'class' => 'app\components\caching\SessionCache',
     ],
     'user' => [
-        'class' => 'app\components\yii\web\User',
+        'class' => 'app\components\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
         'loginUrl' => 'user/account/login',
