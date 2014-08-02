@@ -2,6 +2,7 @@
 
 namespace app\modules\menu\widgets;
 
+use Yii;
 use app\modules\menu\helpers\Menu as MenuHelper;
 
 /**
