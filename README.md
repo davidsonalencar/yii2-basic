@@ -68,6 +68,9 @@ Altere em **<Directory "webRoot">**, AllowOverride None para AllowOverride All
 
 * No campo **Pasta da Fonte** informe o local onde foi realizado o clone do código fonte. No campo **Versão PHP** seleciona *PHP 5.4* ou superior. Clique em **Finalizar**.
 
+### 
+Para associar as alterações do projeto a sua conta do GitHub, deve realizar as configurações baseadas no tópico "Setting up Git" no link https://help.github.com/articles/set-up-git.
+
 ### Instalando dependências:
 
 * Via command line, acesse o diretório base da aplicação e execute o comando abaixo para criar o arquivo **composer.phar**: 
