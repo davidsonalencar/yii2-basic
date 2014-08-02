@@ -2,13 +2,12 @@
 
 namespace app\modules\menu\widgets;
 
-use Yii;
 use app\modules\menu\helpers\Menu as MenuHelper;
 
 /**
  * Description of Menu
  *
- * @author Davidson
+ * @author Davidson Alencar <davidson.t.i@gmail.com>
  */
 class Menu extends \yii\bootstrap\Nav {
     
