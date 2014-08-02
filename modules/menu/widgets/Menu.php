@@ -2,8 +2,7 @@
 
 namespace app\modules\menu\widgets;
 
-use Yii;
-use app\modules\menu\components\MenuHelper;
+use app\modules\menu\helpers\Menu as MenuHelper;
 
 /**
  * Description of Menu
@@ -16,7 +15,7 @@ class Menu extends \yii\bootstrap\Nav {
         
         $this->options['class'] .= ' navbar-nav navbar-right';
         
-        $this->items = MenuHelper::getMenu();
+        $this->items = MenuHelper::getItems();
         
         parent::run();
     }
