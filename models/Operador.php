@@ -66,10 +66,30 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     }
 
     /**
+     * Obtem todos os direitos do operador
      * @return queries\DireitoQuery
      */
     public function getDireitos() {
         return $this->hasMany(Direito::className(), ['id_direito' => 'id_direito'])->viaTable('operador_direito', ['id_operador' => 'id_operador']);
+    }
+    
+    /**
+     * Obtem todos os direitos dos grupos do operador
+     * @return queries\DireitoQuery
+     */
+    public function getDireitosDosGrupos() {
+        
+        return Direito::find()->innerJoin(['gd' => 'grupo_direito'], 'gd.id_direito = direito.id_direito')
+                ->innerJoin(['og' => 'operador_grupo'], 'gd.id_grupo = og.id_grupo')
+                ->where(['og.id_operador' => $this->id_operador]);
+    }
+    
+    /**
+     * Obtem todos os direitos do operador, incluindo os direitos dos grupos
+     * @return queries\DireitoQuery
+     */
+    public function getTodosDireitos() {
+        return $this->getDireitos()->union( $this->getDireitosDosGrupos() );
     }
 
     /**
@@ -156,7 +176,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         return static::findOne(array('nome' => $username/* , 'status_id' => static::STATUS_ACTIVE */));
     }    
     
-        /**
+    /**
      * REGRAS DE NEGÓCIO
      */
 

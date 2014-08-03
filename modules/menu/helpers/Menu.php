@@ -3,6 +3,7 @@
 namespace app\modules\menu\helpers;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * Description of Menu
@@ -22,29 +23,31 @@ class Menu {
     }
     
     /**
-     * @param Direito[] $direitos
+     * @param [] $direitos
      * @return []
      */
-    private static function getItemsRecursivo( $direitos ) {
-        
+    private static function getItemsRecursivo( $direitos, $id_direito_pai = null ) {
+    
         $result = [];
-        
-        /* @var $direito \app\models\Direito */
+
         foreach ($direitos as $direito) {
-            
-            $item['label'] = $direito->label;
-            $item['url']   = [ !empty($direito->url) ? $direito->url : $direito->id_direito ];
-                             
-            if (count($direito->direitos) > 0) {
-                $item['items'] = static::getItemsRecursivo( $direito->direitos );
+            if ($direito['id_direito_pai'] == $id_direito_pai) {
+                
+                $item = [
+                    'label' => $direito['label'],
+                    'url' => !empty($direito['url']) ? $direito['url'] : $direito['id_direito'],
+                ];
+                
+                $items = self::getItemsRecursivo($direitos, $direito['id_direito']);
+                
+                if ($items) {
+                    $item['items'] = $items;
+                }
+                $result[] = $item;
             }
-            
-            $result[] = $item;
-                    
         }
-        
+
         return $result;
-        
     }
     
     /**
@@ -67,16 +70,16 @@ class Menu {
             return $result;
         }
 
-        $direitos = $identity->getDireitos()->menu()->with('direitos')->all();
-
-        if (count($direitos) > 0) {
+        $direitos = $identity->getTodosDireitos()->menu()->orderBy('id_direito_pai, posicao')->asArray()->all();
+        
+        if (ArrayHelper::count($direitos) > 0) {
             $result = static::getItemsRecursivo( $direitos );
         }
 
         $result[] = static::getItemLogout();
 
         self::resolveCache()->set('menu', $result);
-        
+
         return $result; 
         
     }
