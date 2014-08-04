@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\base\Security;
 
 /**
  * This is the model class for table "operador".
@@ -182,12 +183,14 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
 
     /**
      * Valida a senha informada
-     *
+     * Utilizar $hash = $this->resolveSecurity()->generatePasswordHash($senha); para guardar a senha no banco de dados
+     * 
      * @param string $senha password to validate
      * @return boolean if password provided is valid for current user
      */
     public function validatePassword($senha) {
-        return $this->senha === sha1($senha);
+        
+        return $this->resolveSecurity()->validatePassword($senha, $this->senha);
     }
     
     /**
@@ -212,5 +215,13 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     public static function resolveCache() {
         return Yii::$app->getCache();
     }
+    
+    /**
+     * Returns security component configured as in config
+     * @return Security
+     */
+    public static function resolveSecurity() {
+        return Yii::$app->getSecurity();
+    }    
     
 }
