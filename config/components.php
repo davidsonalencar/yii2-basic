@@ -5,6 +5,11 @@ return [
         'class' => 'yii\web\UrlManager',
         'enablePrettyUrl' => true,
         'showScriptName' => false,
+        'rules' => [
+            '<action:(index|about)>' => 'main/default/<action>',
+            '<action:(login|logout)>' => 'user/account/<action>',
+            '' => 'main/default/index',
+        ]
     ],
     'authManager' => [
         'class' => 'app\components\rbac\DbManager',
@@ -22,7 +27,7 @@ return [
         'class' => 'app\components\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
-        'loginUrl' => 'user/account/login',
+        'loginUrl' => 'login',
     ],
     'i18n' => [
         'translations' => [
@@ -38,7 +43,7 @@ return [
         ],
     ],
     'errorHandler' => [
-        'errorAction' => 'site/error',
+        'errorAction' => 'main/default/error',
     ],
     'mailer' => [
         'class' => 'yii\swiftmailer\Mailer',

@@ -1,8 +1,10 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\main\controllers;
 
-class SiteController extends \app\components\web\Controller {
+use yii\web\Controller;
+
+class DefaultController extends \app\components\web\Controller {
 
     public function actions() {
         return [

@@ -13,6 +13,12 @@ $config = [
         'user' => [
             'class' => 'app\modules\user\UserModule',
         ],
+        'main' => [
+            'class' => 'app\modules\main\MainModule',
+        ],
+        'teste' => [
+            'class' => 'app\modules\teste\TesteModule',
+        ],
     ],
 ];
 

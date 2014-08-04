@@ -92,7 +92,7 @@ class Menu {
         
         return [
             'label' => 'Logout (' . Yii::$app->user->identity->nome . ')',
-            'url' => ['user/account/logout'],
+            'url' => [ '/logout' ],
             'linkOptions' => ['data-method' => 'post']
         ];
     }
