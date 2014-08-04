@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use app\assets\LoginAsset;
+use app\modules\user\assets\LoginAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */

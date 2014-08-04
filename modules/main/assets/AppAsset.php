@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace app\modules\main\assets;
 
 use yii\web\AssetBundle;
 
@@ -13,14 +13,12 @@ use yii\web\AssetBundle;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 2.0
  */
-class LoginAsset extends AssetBundle
+class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    public $baseImg = '@web/imgs';
     public $css = [
-        'css/login.css',
-        'css/animate.css',
+        'css/site.css',
     ];
     public $js = [
     ];
