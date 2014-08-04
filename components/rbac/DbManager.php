@@ -16,7 +16,7 @@ class DbManager extends \yii\rbac\DbManager {
 
         $cacheKey = 'checkAccess:' . $userId . ':' . $permissionName;
         $cached = $this->resolveCache()->get($cacheKey);
-        if (empty($cached)) {
+        if (!isset($cached)) {
             $cached = parent::checkAccess($userId, $permissionName);
             $this->resolveCache()->set($cacheKey, $cached);
         }
