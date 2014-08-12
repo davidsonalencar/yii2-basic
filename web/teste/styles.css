@@ -15,6 +15,10 @@
 .fa.pull-right {
     margin-left: -1em;
 }
+.fa.pull-left {
+    margin-left: -20px;
+}
+
 .logo {
     -moz-transform: translateX(-30%) translateY(-1px) scale(0.6);
     -webkit-transform: translateX(-30%) translateY(-1px) scale(0.6);
@@ -5325,9 +5329,9 @@ body
 {
     background: #f7f7f7;
 }
-.navbar.main .dropdown-menu.list li a
-{
+.navbar.main .dropdown-menu.list li a {
     color: #686868;
+    padding-left: 30px;
 }
 .navbar.main .dropdown-menu.list li a i
 {

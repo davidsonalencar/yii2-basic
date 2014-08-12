@@ -31,13 +31,13 @@
                         <a href="" class="toggle-button toggle-sidebar btn-navbar"><i class="fa fa-bars"></i></a>
                     </div>
                     <a href="index.html?lang=en&amp;top_style=primary&amp;sidebar_style=default&amp;skin=blue-gray&amp;v=v1.2.4-rc1" class="appbrand innerL">
-                        <img class="logo" src="img/logo.png" />
+                        <img class="logo" src="../img/logo.png" />
                     </a>
                 </div>
             </div>
 
-            <ul class="nav navbar-nav navbar-left">
-                <li class=" hidden-xs">
+            <ul class="nav navbar-nav navbar-left hidden-xs">
+                <li class="hidden-xs">
                     <form class="navbar-form navbar-left " role="search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Localize o usuário..."/>
@@ -47,17 +47,6 @@
                         </div>
                     </form>
                 </li>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle user" data-toggle="dropdown"> <img src="http://cdn.mosaicpro.biz/flatplus/php/assets/images/people/35/8.jpg" alt="" class="img-circle"/><span class="hidden-xs hidden-sm"> &nbsp; Adrian Demian </span> <span class="caret"></span></a>
-                    <ul class="dropdown-menu list pull-right ">
-                        <li><a href="#">Your Profile <i class="fa fa-user pull-right"></i></a></li>
-                        <li><a href="#">Edit Account <i class="fa fa-pencil pull-right"></i></a></li>
-                        <li><a href="#">Get Help <i class="fa fa-question-circle pull-right"></i></a></li>
-                        <li><a href="#">Log out <i class="fa fa-sign-out pull-right"></i></a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right hidden-xs">
                 <li class="dropdown notification">
                     <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown"><i class="fa fa-fw fa-envelope-o"></i><span class="badge badge-primary">2</span></a>
                     <ul class="dropdown-menu inbox">
@@ -173,7 +162,19 @@
                         <li><a href="">Romanian</a></li>
                     </ul>
                 </li>
-                <li><a href="" class="menu-icon"><i class="fa fa-sign-out"></i></a></li>
+                <!-- <li><a href="" class="menu-icon"><i class="fa fa-sign-out"></i></a></li> -->
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle user" data-toggle="dropdown"> <img src="http://cdn.mosaicpro.biz/flatplus/php/assets/images/people/35/8.jpg" alt="" class="img-circle"/><span class="hidden-xs hidden-sm"> &nbsp; Adrian Demian </span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu list pull-right ">
+                        <li><a href="#">Your Profile <i class="fa fa-user pull-left"></i></a></li>
+                        <li><a href="#">Edit Account <i class="fa fa-pencil pull-left"></i></a></li>
+                        <li><a href="#">Get Help <i class="fa fa-question-circle pull-left"></i></a></li>
+                        <li><a href="#">Log out <i class="fa fa-sign-out pull-left"></i></a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
