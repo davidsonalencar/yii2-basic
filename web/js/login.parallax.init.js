@@ -1,6 +1,6 @@
 $(function(){
     
-    function moveDiv(e){
+    function moveDiv(pageX, pageY, duration){
     
         var windowWidth  = $('body').width();
         var windowHeight = $('body').height();
@@ -13,22 +13,29 @@ $(function(){
             var top    = (windowHeight - div.height())*0.5;
             var factor = parseFloat(div.data('factor'));
 
-            left = factor * (0.2 * windowWidth  - e.pageX) + left;
-            top  = factor * (0.6 * windowHeight - e.pageY) + top;
+            left = factor * (0.2 * windowWidth  - pageX) + left;
+            top  = factor * (0.6 * windowHeight - pageY) + top;
             
             div.css({
                 left: left,
-                top : top
+                top : top,
+                'transition-duration': (duration||'0s'),
+                '-webkit-transition-duration': (duration||'0s')
             });
 
         });
 
     }
+    
+    function onMouseMove(e) {
+        
+        moveDiv(e.pageX, e.pageY);
+    }
 
     function initParallax() {
 
         $('body')
-                .on('mousemove', moveDiv)
+                .on('mousemove', onMouseMove)
                 .append($('<div/>', {
                     class: 'parallax',
                     id: 'reflex1',
@@ -53,16 +60,10 @@ $(function(){
         var windowWidth  = $('body').width();
         var windowHeight = $('body').height();
         
-        moveDiv({
-            pageX: windowWidth*0.2,
-            pageY: windowHeight*0.6
-        });
+        moveDiv( windowWidth*0.2, windowHeight*0.6 );
         
         setTimeout(function(){
-            moveDiv({
-                pageX: windowWidth*0.5,
-                pageY: windowHeight*0.4
-            });
+            moveDiv( windowWidth*0.5, windowHeight*0.4, '2s' );
             $('div.parallax').css('opacity', 1);
         }, 200);
         
