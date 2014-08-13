@@ -3,6 +3,7 @@ body {
     height: 100%;
     background: #354F7E;
     color: #ffffff;
+    overflow: hidden;
 }
 
 .wrap {
@@ -14,6 +15,7 @@ body {
     top: 50%;
     margin-left: -150px; 
     margin-top: -140px; 
+    z-index: 2;
 }
 
 .wrap > .container {
@@ -110,4 +112,39 @@ body {
 
 .login-panel .btn-lg {
     border-radius: 0;
+}
+
+
+ div.parallax {
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+    z-index: 1;
+    transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    opacity: 0;
+}
+div#reflex1.parallax {
+    background: rgba(250, 250, 250, 0.015);
+    box-shadow: 0 0 5px 1px rgba(250, 250, 250, 0.015);
+    width: 50px;
+    height: 50px;
+}
+div#reflex2.parallax {
+    background: rgba(250, 250, 250, 0.04);
+    box-shadow: 0 0 5px 1px rgba(250, 250, 250, 0.04);
+    width: 90px;
+    height: 90px;
+}
+div#reflex3.parallax {
+    background: rgba(250, 250, 250, 0.02);
+    box-shadow: 0 0 5px 1px rgba(250, 250, 250, 0.02);
+    width: 200px;
+    height: 200px;
+}
+div#reflex4.parallax {
+    background: rgba(250, 250, 250, 0.02);
+    box-shadow: 0 0 5px 1px rgba(250, 250, 250, 0.02);
+    width: 300px;
+    height: 300px;
 }

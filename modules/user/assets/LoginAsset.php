@@ -23,6 +23,7 @@ class LoginAsset extends AssetBundle
         'css/animate.css',
     ];
     public $js = [
+        'js/login.parallax.init.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
