@@ -9,6 +9,7 @@ $(function(){
 
             var div = $(this);
 
+            // Define a posição do topo e da esquerda das div em um fator de distancia do ponteiro mouse
             var left   = (windowWidth  - div.width() )*0.5;
             var top    = (windowHeight - div.height())*0.5;
             var factor = parseFloat(div.data('factor'));
@@ -16,13 +17,20 @@ $(function(){
             left = factor * (0.2 * windowWidth  - pageX) + left;
             top  = factor * (0.6 * windowHeight - pageY) + top;
             
+            // Define a opacidade baseado na posição das divs. Quanto mais ao centro, mas transparente é.
+            var halfWidth = windowWidth * 0.5;
+            var refLeft = Math.abs( left + div.width() * 0.5 - halfWidth );
+            var opacity = (1 * refLeft / halfWidth) * 5;
+            
+            // Aplica css
             div.css({
                 left: left,
                 top : top,
+                opacity: opacity,
                 'transition-duration': (duration||'0s'),
                 '-webkit-transition-duration': (duration||'0s')
             });
-
+                        
         });
 
     }
