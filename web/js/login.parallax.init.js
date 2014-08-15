@@ -5,7 +5,7 @@ $(function(){
         var windowWidth  = $('body').width();
         var windowHeight = $('body').height();
 
-        $('div.parallax').each(function(){
+        $('div.reflection').each(function(){
 
             var div = $(this);
 
@@ -21,13 +21,15 @@ $(function(){
             var halfWidth = windowWidth * 0.5;
             var refLeft = Math.abs( left + div.width() * 0.5 - halfWidth );
             var opacity = (1 * refLeft / halfWidth) * 5;
-            
+
             // Aplica css
             div.css({
                 left: left,
                 top : top,
                 opacity: opacity,
                 'transition-duration': (duration||'0s'),
+                '-webkit-transition-duration': (duration||'0s'),
+                'animation-duration': (duration||'0s'),
                 '-webkit-transition-duration': (duration||'0s')
             });
                         
@@ -45,23 +47,19 @@ $(function(){
         $('body')
                 .on('mousemove', onMouseMove)
                 .append($('<div/>', {
-                    class: 'parallax',
-                    id: 'reflex1',
+                    class: 'reflection reflection1',
                     'data-factor': '0.4'
                 }))
                 .append($('<div/>', {
-                    class: 'parallax',
-                    id: 'reflex2',
+                    class: 'reflection reflection2',
                     'data-factor': '0.6'
                 }))
                 .append($('<div/>', {
-                    class: 'parallax',
-                    id: 'reflex3',
+                    class: 'reflection reflection3',
                     'data-factor': '1.0'
                 }))
                 .append($('<div/>', {
-                    class: 'parallax',
-                    id: 'reflex4',
+                    class: 'reflection reflection4',
                     'data-factor': '1.2'
                 }));
 

@@ -1,4 +1,11 @@
-{
+{    
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/contempory/animate.css"
+    }, {
+        "type": "vcs",
+        "url": "https://github.com/contempory/Modernizr"
+    }],
     "name": "yiisoft/yii2-app-basic",
     "description": "Yii 2 Basic Application Template",
     "keywords": ["yii2", "framework", "basic", "application template"],
@@ -18,7 +25,8 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "contempory/animate.css": "3.2.0"
+        "contempory/animate.css": "3.2.0",
+        "contempory/Modernizr": "2.8.3"        
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

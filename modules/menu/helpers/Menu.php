@@ -35,7 +35,7 @@ class Menu {
                 
                 $item = [
                     'label' => $direito['label'],
-                    'url' => !empty($direito['url']) ? $direito['url'] : $direito['id_direito'],
+                    'url' => [ '/'. ( !empty($direito['url']) ? $direito['url'] : $direito['id_direito'] ) ],
                 ];
                 
                 $items = self::getItemsRecursivo($direitos, $direito['id_direito']);
@@ -56,7 +56,7 @@ class Menu {
      */
     public static function getItems() {
         
-        $result = self::resolveCache()->get('menu');
+     //   $result = self::resolveCache()->get('menu');
         
         if (!empty($result)) {
             return $result;

@@ -166,8 +166,8 @@ if (window.location != window.parent.location) {
         $('html').removeClass('app');
     }
 
-    if ($('.sidebar > .sidebarMenuWrapper').length && typeof $.fn.niceScroll !== 'undefined') {
-        $('.sidebar > .sidebarMenuWrapper')
+    if ($('.sidebar > .sidebar-menu-wrapper').length && typeof $.fn.niceScroll !== 'undefined') {
+        $('.sidebar > .sidebar-menu-wrapper')
                 .addClass('hasNiceScroll')
                 .niceScroll({
                     horizrailenabled: false,

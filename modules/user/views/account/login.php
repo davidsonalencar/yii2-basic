@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 <div class="login-panel">
     
     <?= Html::img('img/logo.png', [
-        'class' => 'logo center-block animate-0_0 bounceIn'
+        'class' => 'logo center-block animate0 bounceIn'
     ]) ?>
     
     
@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'username', [
         'inputOptions' => [
             'placeholder' => Yii::t('app', 'Username'),
-            'class' => 'form-control animate-0_2 bounceIn',
+            'class' => 'form-control animate1 bounceIn',
             'autofocus' => '',
         ]
     ]) ?>
@@ -34,14 +34,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'password', [
         'inputOptions' => [
             'placeholder' => Yii::t('app', 'Password'),
-            'class' => 'form-control animate-0_4 bounceIn'
+            'class' => 'form-control animate2 bounceIn'
         ]
     ])->passwordInput() ?>
     
     <div class="form-group">
         <div class="col-lg-12">
             <?= Html::submitButton(Yii::t('app', 'Login'), [
-                'class' => 'btn btn-lg btn-primary btn-block animate-0_6 bounceIn', 
+                'class' => 'btn btn-lg btn-primary btn-block animate3 bounceIn', 
                 'name' => 'login-button'
             ]) ?>
         </div>
@@ -50,7 +50,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'rememberMe', [
         'template' => "<div class=\"col-lg-12\">{input}</div>\n<div class=\"col-lg-12\">{error}</div>",
         'options' => [
-            'class' => 'form-group animate-0_8 bounceIn'
+            'class' => 'form-group animate4 bounceIn'
         ],
     ])->checkbox() ?>
 
