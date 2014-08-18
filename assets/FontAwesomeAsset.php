@@ -12,14 +12,14 @@ use yii\web\AssetBundle;
 
 /**
  * @author Davidson Alencar <davidson.t.i@gmail.com>
- * @since 3.2.0
- * @version 3.2.0
+ * @since v4.1.0
+ * @version v4.1.0
  */
-class AnimateCssAsset extends AssetBundle {
+class FontAwesomeAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/contempory/animate.css';
+    public $sourcePath = '@vendor/fortawesome/font-awesome';
     public $css = [
-        'animate.min.css',
+        'css/font-awesome.css',
     ];
 
 }
