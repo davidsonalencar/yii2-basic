@@ -27,7 +27,9 @@
         "yiisoft/yii2-swiftmailer": "*",
         "contempory/animate.css": "3.2.0",
         "contempory/Modernizr": "2.8.3",
-        "FortAwesome/Font-Awesome": "v4.1.0"
+        "FortAwesome/Font-Awesome": "v4.1.0",
+        "webfontkit/roboto": "0.1.0",
+        "webfontkit/open-sans": "0.1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

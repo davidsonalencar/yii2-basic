@@ -22,6 +22,10 @@ class AppAsset extends AssetBundle
         //variables
         //mixins
         //scaffolding
+        //helpers
+        //layout
+        //menus.dropdowns
+        //widgets
     ];
     public $js = [
     ];
@@ -29,5 +33,7 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
+        'app\assets\FontRobotoAsset',
+        'app\assets\FontOpenSansAsset',
     ];
 }
