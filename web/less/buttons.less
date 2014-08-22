@@ -7,7 +7,7 @@
 
 .btn { 
     text-shadow: none;
-    #reset .boxShadow();
+    #reset .box-shadow();
     .rounded();
     &.active, &:active {
         outline: 0;
@@ -15,7 +15,7 @@
     }
     &:hover {
         &.text-primary { 
-            background-color: @primaryColor; 
+            background-color: @primary-color; 
             .fa { color:#fff; }
         }
     }
@@ -50,120 +50,120 @@
 // -------------------------
 
 .btn-warning {
-    background: @warningColor;
-    border-color: @warningColor;
+    background: @warning-color;
+    border-color: @warning-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @warningColor;
+        color: @warning-color;
     }
 }
 .btn-group.open .btn-warning.dropdown-toggle,
 .btn-warning.disabled, .btn-warning[disabled],
 .btn-warning:hover, .btn-warning:focus,
-.btn-warning:active, .btn-warning.active { background: none; color: @warningColor; }
+.btn-warning:active, .btn-warning.active { background: none; color: @warning-color; }
 .btn-warning.btn-stroke:hover, .btn-warning.btn-stroke:focus,
-.btn-warning.btn-stroke:active, .btn-warning.btn-stroke.active { background: @warningColor; color: #fff; }
+.btn-warning.btn-stroke:active, .btn-warning.btn-stroke.active { background: @warning-color; color: #fff; }
 .btn-warning .caret { border-top-color: rgba(255,255,255,.7); border-bottom-color: rgba(255,255,255,.7); }
 
 // Info
 // -------------------------
 
 .btn-info {
-    background: @infoColor;
-    border-color: @infoColor;
+    background: @info-color;
+    border-color: @info-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @infoColor;
+        color: @info-color;
     }
 }
 .btn-group.open .btn-info.dropdown-toggle,
 .btn-info.disabled, .btn-info[disabled],
 .btn-info:hover, .btn-info:focus,
-.btn-info:active, .btn-info.active { background: none; color: @infoColor; }
+.btn-info:active, .btn-info.active { background: none; color: @info-color; }
 .btn-info.btn-stroke:hover, .btn-info.btn-stroke:focus,
-.btn-info.btn-stroke:active, .btn-info.btn-stroke.active { background: @infoColor; color: #fff; }
+.btn-info.btn-stroke:active, .btn-info.btn-stroke.active { background: @info-color; color: #fff; }
 .btn-info .caret { border-top-color: rgba(255,255,255,.7); border-bottom-color: rgba(255,255,255,.7); }
 
 // Danger
 // -------------------------
 
 .btn-danger {
-    background: @dangerColor;
-    border-color: @dangerColor;
+    background: @danger-color;
+    border-color: @danger-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @dangerColor;
+        color: @danger-color;
     }
 }
 .btn-group.open .btn-danger.dropdown-toggle,
 .btn-danger.disabled, .btn-danger[disabled],
 .btn-danger:hover, .btn-danger:focus,
-.btn-danger:active, .btn-danger.active { background: none; color: @dangerColor; }
+.btn-danger:active, .btn-danger.active { background: none; color: @danger-color; }
 .btn-danger.btn-stroke:hover, .btn-danger.btn-stroke:focus,
-.btn-danger.btn-stroke:active, .btn-danger.btn-stroke.active { background: @dangerColor; color: #fff; }
+.btn-danger.btn-stroke:active, .btn-danger.btn-stroke.active { background: @danger-color; color: #fff; }
 .btn-danger .caret { border-top-color: rgba(255,255,255,.7); border-bottom-color: rgba(255,255,255,.7); }
 
 // Primary
 // -------------------------
 
 .btn-primary {
-    background: @primaryColor;
-    border-color: @primaryColor;
+    background: @primary-color;
+    border-color: @primary-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @primaryColor;
+        color: @primary-color;
     }
 }
 .btn-group.open .btn-primary.dropdown-toggle,
 .btn-primary.disabled, .btn-primary[disabled],
 .btn-primary:hover, .btn-primary:focus,
-.btn-primary:active, .btn-primary.active { background: none; color: @primaryColor; border-color: @primaryColor }
+.btn-primary:active, .btn-primary.active { background: none; color: @primary-color; border-color: @primary-color }
 .btn-primary.btn-stroke:hover, .btn-primary.btn-stroke:focus,
-.btn-primary.btn-stroke:active, .btn-primary.btn-stroke.active { background: @primaryColor; color: #fff; }
+.btn-primary.btn-stroke:active, .btn-primary.btn-stroke.active { background: @primary-color; color: #fff; }
 .btn-primary .caret { border-top-color: #ffffff; border-bottom-color: #ffffff; }
 
 // Inverse
 // -------------------------
 
 .btn-inverse {
-    background: @inverseColor;
-    border-color: @inverseColor;
+    background: @inverse-color;
+    border-color: @inverse-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @inverseColor;
+        color: @inverse-color;
     }
 }
 .btn-group.open .btn-inverse.dropdown-toggle,
 .btn-inverse.disabled, .btn-inverse[disabled],
 .btn-inverse:hover, .btn-inverse:focus,
-.btn-inverse:active, .btn-inverse.active { background: none; color: @inverseColor; }
+.btn-inverse:active, .btn-inverse.active { background: none; color: @inverse-color; }
 .btn-inverse.btn-stroke:hover, .btn-inverse.btn-stroke:focus,
-.btn-inverse.btn-stroke:active, .btn-inverse.btn-stroke.active { background: @inverseColor; color: #fff; }
+.btn-inverse.btn-stroke:active, .btn-inverse.btn-stroke.active { background: @inverse-color; color: #fff; }
 .btn-inverse .caret { border-top-color: #fff; border-bottom-color: #fff; }
 
 // Success
 // -------------------------
 
 .btn-success {
-    background: @successColor;
-    border-color: @successColor;
+    background: @success-color;
+    border-color: @success-color;
     color: #ffffff;
     &.btn-stroke {
         background: none;
-        color: @successColor;
+        color: @success-color;
     }
 }
 .btn-group.open .btn-success.dropdown-toggle,
 .btn-success.disabled, .btn-success[disabled],
 .btn-success:hover, .btn-success:focus,
-.btn-success:active, .btn-success.active { background: none; color: @successColor; }
+.btn-success:active, .btn-success.active { background: none; color: @success-color; }
 .btn-success.btn-stroke:hover, .btn-success.btn-stroke:focus,
-.btn-success.btn-stroke:active, .btn-success.btn-stroke.active { background: @successColor; color: #fff; }
+.btn-success.btn-stroke:active, .btn-success.btn-stroke.active { background: @success-color; color: #fff; }
 .btn-success .caret { border-top-color: #fff; border-bottom-color: #fff; }
 
 // Button groups
@@ -295,19 +295,19 @@
     }
     &.btn-default i:before { color: #9e9e9e; text-shadow: none; }
     &.single {
-        color: @primaryColor;
+        color: @primary-color;
         padding: 0 0 0 20px;
-        i:before { font-size: 13px; top: 4px; color: @primaryColor; }
+        i:before { font-size: 13px; top: 4px; color: @primary-color; }
         + .single { margin-left: 8px; }
         &.regular {
-            color: @bodyText; 
+            color: @body-text; 
             i:before { 
-                color: @bodyText; 
+                color: @body-text; 
             } 
         }
     }
-    &.primary { i:before { color: @primaryColor; } }
-    &.text-error { color: @primaryColor; i:before { color: @primaryColor; } }
+    &.primary { i:before { color: @primary-color; } }
+    &.text-error { color: @primary-color; i:before { color: @primary-color; } }
     &.text-info { color: #5d92b3; i:before { color: #5d92b3; } }
     &.text-success { color: #719d46; i:before { color: #719d46; } }
 }

@@ -47,7 +47,7 @@
 .border-bottom-none { border-bottom: none !important; }
 .border-left-none { border-left: none !important; }
 .border-right-none { border-right: none !important; }
-.box-shadow-none { #reset .boxShadow(); }
+.box-shadow-none { #reset .box-shadow(); }
 
 // backgrounds
 .bg-container { background: #eaeaea !important; }
@@ -55,26 +55,26 @@
 .bg-gray-dark { background: #f2f2f2 !important; }
 .bg-none { background: none !important; }
 .bg-white { background: #fff !important; }
-.bg-success { background: @successColor !important; color: #fff; }
-.bg-info { background: @infoColor !important; color: #fff; }
-.bg-info-dark { background: darken(@infoColor, 10%) !important; }
-.bg-inverse { background: @inverseColor !important; color: #fff; }
-.bg-inverse-faded { background: fade(@inverseColor, 50%) !important; }
-.bg-primary { background: @primaryColor !important; color: #fff; }
+.bg-success { background: @success-color !important; color: #fff; }
+.bg-info { background: @info-color !important; color: #fff; }
+.bg-info-dark { background: darken(@info-color, 10%) !important; }
+.bg-inverse { background: @inverse-color !important; color: #fff; }
+.bg-inverse-faded { background: fade(@inverse-color, 50%) !important; }
+.bg-primary { background: @primary-color !important; color: #fff; }
 .bg-primary-light {
-    background: lighten(@primaryColor, 33%) !important;
-    *:not(.btn) { border-color: lighten(@primaryColor, 17%) !important; }
+    background: lighten(@primary-color, 33%) !important;
+    *:not(.btn) { border-color: lighten(@primary-color, 17%) !important; }
     &[class*="border-"], &.box-generic {
-        border-color: lighten(@primaryColor, 28%) !important;
+        border-color: lighten(@primary-color, 28%) !important;
     }
     .caret { 
         border-left-color: transparent !important;
         border-bottom-color: transparent !important;
         border-top-color: transparent !important;
-        border-right-color: lighten(@primaryColor, 17%) !important;
+        border-right-color: lighten(@primary-color, 17%) !important;
     }
 }
-.bg-warning { background:@warningColor; }
+.bg-warning { background:@warning-color; }
 
 // other custom colors
 .bg-lightred { background:#E15258; }
@@ -94,9 +94,9 @@
 
 // text color
 .text-white { color: #fff; }
-.text-info { color: @infoColor; }
-.text-primary { color: @primaryColor !important; }
-.text-success { color:@successColor; }
+.text-info { color: @info-color; }
+.text-primary { color: @primary-color !important; }
+.text-success { color:@success-color; }
 .text-regular { color: #444 !important; }
 .text-faded { color: #d7d7d7 !important; }
 .text-muted-dark { color: lighten(#7c7c7c, 15%); }
@@ -126,7 +126,7 @@
 .overflow-y-auto { position: relative; overflow: hidden; overflow-y: auto; }
 .applyNiceScroll { overflow-y: auto; }
 .overflow-hidden { position: relative; overflow: hidden; }
-.containerBg { background: @containerBg; }
+.containerBg { background: @container-bg; }
 .whiteBg { background: #fff; }
 .hide2 { display: none; }
 
@@ -184,18 +184,18 @@ li[class*="col-lg-"] { padding: 0 @spacing/2; }
     > [class*="col-"] { padding: 0; }
     > [class*="col-"] ~ [class*="col-"] {
         position: static;
-        &:after { position: absolute; top: 0; bottom: 0; width: 1px; background: @contentBorder; content: ""; }
+        &:after { position: absolute; top: 0; bottom: 0; width: 1px; background: @content-border; content: ""; }
     }
-    &.border-top, & ~ & { border-top: 1px solid @contentBorder; }
-    &.border-bottom { border-bottom: 1px solid @contentBorder; }
+    &.border-top, & ~ & { border-top: 1px solid @content-border; }
+    &.border-bottom { border-bottom: 1px solid @content-border; }
     .fill-column {
-        &:before { position: absolute; top: 0; bottom: 0; width: inherit; background: @widgetBgGray; content: ""; }
+        &:before { position: absolute; top: 0; bottom: 0; width: inherit; background: @widget-bg-gray; content: ""; }
     }
 
     @media (min-width: 768px) and (max-width: 991px) {
         > [class*="col-sm-12"] ~ [class*="col-sm-12"] {
             position: relative;
-            &:after { position: absolute; top: 0; bottom: auto; left: 0; right: 0; width: auto; height: 1px; background: @contentBorder; content: ""; }
+            &:after { position: absolute; top: 0; bottom: auto; left: 0; right: 0; width: auto; height: 1px; background: @content-border; content: ""; }
         }
     }
 }
@@ -220,7 +220,7 @@ li[class*="col-lg-"] { padding: 0 @spacing/2; }
             vertical-align: middle;
             margin: 0 10px;
         }
-        i, i:before { color: @primaryColor; font-size: 24px; }
+        i, i:before { color: @primary-color; font-size: 24px; }
         span {
             padding-left: 5px;
         }
@@ -259,27 +259,27 @@ li[class*="col-lg-"] { padding: 0 @spacing/2; }
     }
 }
 .bg-success .notebook {
-    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@successColor 5%) 0 0;
-    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@successColor 5%) 0 0;
-    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@successColor 5%) 0 0;
+    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@success-color 5%) 0 0;
+    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@success-color 5%) 0 0;
+    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@success-color 5%) 0 0;
     -webkit-background-size: 100% 30px;
     -moz-background-size: 100% 30px;
     -ms-background-size: 100% 30px;
     color: #fff;
 }
 .bg-inverse .notebook {
-    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@inverseColor 5%) 0 0;
-    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@inverseColor 5%) 0 0;
-    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@inverseColor 5%) 0 0;
+    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@inverse-color 5%) 0 0;
+    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@inverse-color 5%) 0 0;
+    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@inverse-color 5%) 0 0;
     -webkit-background-size: 100% 30px;
     -moz-background-size: 100% 30px;
     -ms-background-size: 100% 30px;
     color: #fff;
 }
 .bg-primary .notebook {
-    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@primaryColor 5%) 0 0;
-    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@primaryColor 5%) 0 0;
-    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@primaryColor 5%) 0 0;
+    background: -webkit-linear-gradient(bottom,fade(#fff, 30%) 0%,@primary-color 5%) 0 0;
+    background: -moz-linear-gradient(bottom,fade(#fff, 30%) 0%,@primary-color 5%) 0 0;
+    background: linear-gradient(bottom,fade(#fff, 30%) 0%,@primary-color 5%) 0 0;
     -webkit-background-size: 100% 30px;
     -moz-background-size: 100% 30px;
     -ms-background-size: 100% 30px;

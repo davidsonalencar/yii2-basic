@@ -26,6 +26,17 @@ class AppAsset extends AssetBundle
         //layout
         //menus.dropdowns
         //widgets
+        //forms
+        //buttons
+        //labels
+        //animations
+        //animate.css
+        //flotcharts (rever)
+        //tooltips
+        //menus.navbar.common
+        //menus.navbar.default
+        //menus.navbar.primary
+        //menus.sidebar.less
     ];
     public $js = [
     ];

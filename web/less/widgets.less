@@ -40,14 +40,14 @@
 a.widget { display: block; text-decoration: none; i.display-block { margin-bottom: 10px } }
 
 .widget {
-    background: @widgetBg;
+    background: @widget-bg;
     margin: 0 auto @spacing;
     position: relative;
     border: 1px solid #e6e6e6;
     .tab-content { padding: 0; }
     .widget-head {
-        background: @inverseColor;
-        border-bottom: 1px solid @contentBorder;
+        background: @inverse-color;
+        border-bottom: 1px solid @content-border;
         height: 40px;
         line-height: 40px;
         position: relative;
@@ -63,7 +63,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         }
         .heading { 
             margin: 0; 
-            color: @bodyText;
+            color: @body-text;
             font-size: 14px;
             height: 40px;
             line-height: 40px;
@@ -82,7 +82,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
                     line-height: 40px;
                     text-align: center;
                     width: 35px;
-                    color: @bodyText;
+                    color: @body-text;
                     font-size: 16px;
                     font-weight: normal;
                     text-shadow: none;
@@ -99,7 +99,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
             }
         }
     }
-    .details { font-size: 8pt; color: @bodyText; }
+    .details { font-size: 8pt; color: @body-text; }
     .widget-body {
         form { margin: 0; }
         p.lead {font-size: 25px;}
@@ -107,7 +107,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         > pre:last-child, > p:last-child { margin: 0; }
         &.list {
             .count { font-size: 15pt; font-weight: 400; }
-            color: @bodyText;
+            color: @body-text;
             padding: 0;
             ul {
                 margin: 0;
@@ -116,17 +116,17 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
                     .badge { position: absolute; right: 8px; top: 10px; } 
                     padding: 0 10px; 
                     height: 39px; 
-                    border-bottom: 1px solid @contentBorder;
+                    border-bottom: 1px solid @content-border;
                     position: relative;
                     line-height: 39px; 
                     text-align: left; 
-                    text-shadow: @bodyTextShadow;
+                    text-shadow: @body-text-shadow;
                     clear: both;
                     &:first-child { border-top: none; }
                     &:last-child { border-bottom: none; } 
-                    .count { float: right; color: @bodyText2; } 
+                    .count { float: right; color: @body-text2; } 
                     .sparkline { position: relative; top: 5px; margin-left: 5px; }
-                    a { color: @bodyText2; font-weight: bold; }
+                    a { color: @body-text2; font-weight: bold; }
                 }
             }
             &.products {
@@ -172,8 +172,8 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
                     &.active {
                         border-color: #dddddd; 
                         background: #fff;
-                        i:before { font-weight: normal; background: @primaryColor; color: #fff; text-shadow: none; height: 20px; }
-                        a { color: @primaryColor; } 
+                        i:before { font-weight: normal; background: @primary-color; color: #fff; text-shadow: none; height: 20px; }
+                        a { color: @primary-color; } 
                     }
                     &:last-child { border-bottom: none; }
                     a {
@@ -206,10 +206,10 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         }
     }
     .widget-footer {
-        background: @contentBg1;
+        background: @content-bg1;
         height: 25px;
         line-height: 25px;
-        border-top: 1px solid @contentBorder2;
+        border-top: 1px solid @content-border2;
         .glyphicons {
             width: 25px; height: 25px; line-height: 25px; padding: 0; float: right;
             vertical-align: top;
@@ -220,7 +220,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
                 width: 20px;
                 height: 25px;
                 line-height: 25px;
-                text-shadow: @bodyTextShadow;
+                text-shadow: @body-text-shadow;
             }
             &:hover i:before {
                 color: rgba(0,0,0,.5);
@@ -234,7 +234,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         .widget-head {
             background: #e9e9e9;
             border-color: #d1d2d3;
-            .bevelEmboss(0.6, 0);
+            .bevel-emboss(0.6, 0);
             .heading {
                 color: #555555; text-shadow: 0 1px 0 #fff;
                 &.glyphicons {
@@ -245,13 +245,13 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
     }
 
     &.widget-primary {
-        background: @primaryColor;
+        background: @primary-color;
         color:#fff;
         p {color:#fff;}
         .widget-head {
             background: #e9e9e9;
             border-color: #d1d2d3;
-            .bevelEmboss(0.6, 0);
+            .bevel-emboss(0.6, 0);
             .heading {
                 color: #555555; text-shadow: 0 1px 0 #fff;
                 &.glyphicons {
@@ -264,7 +264,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
     &.widget-profile {
         .widget-head {
 
-            a.pull-right {position: absolute; right:10px; font-size:18px;color: lighten(@primaryColor,10%); display: inline;
+            a.pull-right {position: absolute; right:10px; font-size:18px;color: lighten(@primary-color,10%); display: inline;
                           &:hover { color:#fff;}
             }
             padding-top:15px;
@@ -279,7 +279,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         &:before, &:after { display: none; }
         .widget-head {
             background: #e2e2e4;
-            .bevelEmboss(0.6, 0);
+            .bevel-emboss(0.6, 0);
             height: 36px;
             line-height: 36px;
             border-color: #d1d2d3;
@@ -304,9 +304,9 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         }
         &.primary {
             .widget-head { 
-                background: @primaryColor;
-                border-color: @primaryColor;
-                .bevelEmboss(0.6,0.1);
+                background: @primary-color;
+                border-color: @primary-color;
+                .bevel-emboss(0.6,0.1);
                 .heading { color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,.5); i:before { color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,.5); } } 
             }
         }
@@ -340,7 +340,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
             }
         }
         .widget-body {
-            border-bottom: 1px solid @contentBorder;
+            border-bottom: 1px solid @content-border;
             &.large {
                 font-size: 26pt;
                 font-weight: bold;
@@ -356,7 +356,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
                         display: inline-block;
                         text-shadow: none;
                         span { display: block; }
-                        span:first-child { color: @primaryColor; text-transform: uppercase; font-size: 13pt; }
+                        span:first-child { color: @primary-color; text-transform: uppercase; font-size: 13pt; }
                     }
                 }
                 &.dashboard {
@@ -365,17 +365,17 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
             }
         }
         .widget-footer {
-            background: @contentBg1;
+            background: @content-bg1;
             border-top: none;
             a { 
-                float: none; color: #dddddd; width: auto; padding: 0 10px 0 30px; border-right: 1px solid @contentBorder; text-decoration: none; i:before { color: #dddddd; left: 5px; }
+                float: none; color: #dddddd; width: auto; padding: 0 10px 0 30px; border-right: 1px solid @content-border; text-decoration: none; i:before { color: #dddddd; left: 5px; }
                 &:hover {
-                    color: @primaryColor;
-                    i:before { color: @primaryColor; }
+                    color: @primary-color;
+                    i:before { color: @primary-color; }
                 } 
             }
-            &.align-center { text-align: center; a:first-child { border-left: 1px solid @contentBorder; } }
-            &.align-right { text-align: right; a:first-child { border-left: 1px solid @contentBorder; } a:last-child { border-right: none; } }
+            &.align-center { text-align: center; a:first-child { border-left: 1px solid @content-border; } }
+            &.align-right { text-align: right; a:first-child { border-left: 1px solid @content-border; } a:last-child { border-right: none; } }
         }
     }
     &.widget-4 {
@@ -426,7 +426,7 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
             }
         }
         > .widget-body {
-            border: 1px solid @contentBorder;
+            border: 1px solid @content-border;
         }
     }
     &.widget-body-simple {
@@ -439,31 +439,31 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
         }
     }
     &.widget-body-white {
-        > .widget-body { background: @widgetBg; }
+        > .widget-body { background: @widget-bg; }
     }
     &.widget-body-gray {
-        > .widget-body {  background: @widgetBgGray; }
+        > .widget-body {  background: @widget-bg-gray; }
     }
     &.widget-body-primary {
         > .widget-body { 
-            background: @primaryColor; 
+            background: @primary-color; 
             * { color: #fff; text-shadow: none; } 
         }
     }
     &.widget-body-inverse {
         > .widget-body {
-            background: @inverseColor;
+            background: @inverse-color;
             *, i:before { color: #fff; text-shadow: none; }
         }
     }
     &.widget-body-default {
         > .widget-body {
-            background: @defaultColor;
+            background: @default-color;
             *, i:before { color: #fff; text-shadow: none; }
         }
     }
     &.widget-body-multiple {
-        #reset .boxShadow();
+        #reset .box-shadow();
         > .widget-body {
             margin-bottom: @spacing/2;
             &:last-of-type { margin-bottom: 0; }
@@ -473,26 +473,26 @@ a.widget { display: block; text-decoration: none; i.display-block { margin-botto
 
         > .widget-head {
             // background: #686868;
-            background-color: @inverseColor;
+            background-color: @inverse-color;
             color: #fff;
             .heading { color: #fff; }
         }
     }
     &.widget-info {
-        background: @infoColor;
+        background: @info-color;
         color:#fff;
     }
     &.widget-dark {
-        background: @inverseColor;
+        background: @inverse-color;
         color:#fff;
     }
 }
 
 .widget-flat {
-    #reset .boxShadow();
+    #reset .box-shadow();
     #reset .rounded();
     > .widget-body {
-        #reset .boxShadow();
+        #reset .box-shadow();
         #reset .rounded();
         border: none !important;
     }
@@ -565,7 +565,7 @@ div.glyphicons, div.glyphicons-social {
         }
     }
     &.glyphicon-primary {
-        i:before { color: @primaryColor; }
+        i:before { color: @primary-color; }
     }
     @media (max-width: 979px) and (min-width: 768px)
         {
@@ -602,7 +602,7 @@ div.glyphicons, div.glyphicons-social {
         }
         &.active, &:hover {
             color: #fff;
-            background: @primaryColor;
+            background: @primary-color;
             i:before { color: #fff; }
         }
         &:last-child { border: none; }
@@ -617,8 +617,8 @@ div.glyphicons, div.glyphicons-social {
             color: #444444;
             i:before { color: #444444; }
             &.active, &:hover {
-                color: @primaryColor;
-                i:before { color: @primaryColor; }
+                color: @primary-color;
+                i:before { color: @primary-color; }
             } 
         }
     }
