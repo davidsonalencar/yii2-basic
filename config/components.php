@@ -14,6 +14,9 @@ return [
     'authManager' => [
         'class' => 'app\components\rbac\DbManager',
     ],
+    'assetManager' => [
+        'bundles' => require(__DIR__ . '/assets_compressed.php'),
+    ],
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
         'enableCookieValidation' => true,
