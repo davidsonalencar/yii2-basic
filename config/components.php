@@ -1,6 +1,6 @@
 <?php
 
-return [
+$config = [
     'urlManager' => [
         'class' => 'yii\web\UrlManager',
         'enablePrettyUrl' => true,
@@ -13,9 +13,6 @@ return [
     ],
     'authManager' => [
         'class' => 'app\components\rbac\DbManager',
-    ],
-    'assetManager' => [
-        'bundles' => require(__DIR__ . '/assets_compressed.php'),
     ],
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -66,3 +63,11 @@ return [
     ],
     'db' => require(__DIR__ . '/db.php'),
 ];
+
+if (!YII_ENV_DEV) {
+    $config['assetManager'] = [
+        'bundles' => require(__DIR__ . '/assets_compressed.php'),
+    ];
+}
+
+return $config;

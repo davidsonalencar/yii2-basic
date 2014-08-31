@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="yii2-basic" default="compress" basedir=".">
+
+    <property name="base-path" location=""/>
+    <target name="compress"> 
+        <echo message="compressing files..."></echo>
+        <exec executable="cmd">
+            <arg value="/C yii asset config/assets.php config/assets_compressed.php"/>
+        </exec>
+    </target>
+       
+</project>
