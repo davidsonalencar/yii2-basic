@@ -25,30 +25,30 @@ AppAsset::register($this);
 
         <?php $this->beginBody() ?>
         
-        <div class="wrap">
-            <?php
-            NavBar::begin([
-                'brandLabel' => Yii::$app->name,
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            
-            echo app\modules\menu\widgets\Menu::widget();
-            
-            NavBar::end();
-            ?>
+        <?php
+        NavBar::begin([
+            'brandLabel' => Yii::$app->name,
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar-fixed-top navbar-primary main',
+                'tag' => 'div',
+            ],
+        ]);
 
-            <div class="container">
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
-                <?= $content ?>
-            </div>
+        //echo app\modules\menu\widgets\Menu::widget();
+
+        NavBar::end();
+        ?>
+
+        <div class="container">
+            <?=
+            Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ])
+            ?>
+            <?= $content ?>
         </div>
+        
 
         <footer class="footer">
             <div class="container">
