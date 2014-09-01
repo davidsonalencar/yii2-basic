@@ -18,30 +18,14 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        //variables
-        //mixins
-        //scaffolding
-        //helpers
-        //layout
-        //menus.dropdowns
-        //widgets
-        //forms
-        //buttons
-        //labels
-        //animations
-        //animate.css
-        //flotcharts (rever)
-        //tooltips
-        //menus.navbar.common
-        //menus.navbar.default
-        //menus.navbar.primary
-        //menus.sidebar.less
+        //'css/site.css',
+        'less/site.less',
     ];
     public $js = [
     ];
     public $depends = [
         'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
         'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
         'app\assets\FontRobotoAsset',

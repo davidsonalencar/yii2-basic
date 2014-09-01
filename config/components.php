@@ -14,6 +14,14 @@ $config = [
     'authManager' => [
         'class' => 'app\components\rbac\DbManager',
     ],
+    'assetManager' => [
+        'converter' => [
+            'class' => 'yii\web\AssetConverter',
+            'commands' => [
+                'less' => ['css', 'lessc {from} {to} --no-color'],
+            ],
+        ],
+    ],
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
         'enableCookieValidation' => true,
@@ -65,9 +73,7 @@ $config = [
 ];
 
 if (!YII_ENV_DEV) {
-    $config['assetManager'] = [
-        'bundles' => require(__DIR__ . '/assets_compressed.php'),
-    ];
+    $config['assetManager']['bundles'] = require(__DIR__ . '/assets_compressed.php');
 }
 
 return $config;
