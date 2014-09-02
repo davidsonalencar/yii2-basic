@@ -17,7 +17,7 @@
     </li>
 </ul>
 
-Caso esteja utilizando o PHP 5.4, deverá realizar o [download](http://downloads.php.net/pierre/php_apc-3.1.10-5.4-vc9-x86.zip) do APC Cache. O PHP 5.5 está com o APC Cache nativo. Por fim, em ambas as versões do PHP, acrescentar no arquivo php.ini o parâmetro abaixo para habilitar o cliente do [APC Cache](http://php.net/manual/pt_BR/book.apc.php) no YII2:
+Caso esteja utilizando o PHP 5.4, deverá realizar o [download](http://windows.php.net/downloads/pecl/releases/apc/3.1.13/) do APC Cache. O PHP 5.5 está com o APC Cache nativo. Por fim, em ambas as versões do PHP, acrescentar no arquivo php.ini o parâmetro abaixo para habilitar o cliente do [APC Cache](http://php.net/manual/pt_BR/book.apc.php) no YII2:
 ```
 [apc]
 apc.enable_cli = 1
