@@ -95,11 +95,6 @@ chmod 777 web/assets/
 
 #### Preparação:
 
-* Execute o comando abaixo para adicionar o Codeception e suas dependências. Para mais detalhes leia o /tests/README.md:
-```
-php composer.phar require --dev "codeception/codeception: 1.8.*@dev" "codeception/specify: *" "codeception/verify: *"
-```
-
 * Execute o comando abaixo para construir os conjuntos de testes:
 ```
 vendor/bin/codecept build
