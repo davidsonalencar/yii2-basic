@@ -31,9 +31,9 @@ expose_php = 0
 ## Pré-requisitos para ambiente de desenvolvimento
 <ul>
     <li>JDK 7</li>
-    <li>[Node.JS](http://nodejs.org) Package Manager:
+    <li><a href="http://nodejs.org">Node.JS</a> Package Manager:
         <ul>
-            <li>[less](https://www.npmjs.org/package/less)</l>
+            <li><a href="https://www.npmjs.org/package/less">less</a></l>
         </ul>
     </li>
 </ul>
