@@ -1,6 +1,6 @@
 # YII2-BASIC
 
-## Pré-requisitos
+## Pré-requisitos do sistema
 
 <ul>
     <li>PHP 5.4 ou superior</li>
@@ -27,6 +27,16 @@ Desabilitar [Expose PHP](http://lv1.php.net/manual/en/ini.core.php#ini.expose-ph
 ```
 expose_php = 0
 ```
+
+## Pré-requisitos para ambiente de desenvolvimento
+<ul>
+    <li>JDK 7</li>
+    <li>[Node.JS](http://nodejs.org) Package Manager:
+        <ul>
+            <li>[less](https://www.npmjs.org/package/less)</l>
+        </ul>
+    </li>
+</ul>
 
 ## Preparação
 
