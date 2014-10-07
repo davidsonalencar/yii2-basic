@@ -78,17 +78,23 @@ Para associar as alterações do projeto a sua conta do GitHub, deve realizar as
 php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
+* Instalar plugin do Composer para utilizar em conjunto com o Bower:
+```
+php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta2"
+```
+
 * Execute o comando abaixo para instalar as dependências do projeto. Umar pasta chamada *vendor* será criada:
 ```
-php composer.phar install
+php composer.phar install --prefer-dist 
 ```
 
 ### Direito de escrita nos diretórios:
 
-* Dê direito de escrita nos seguintes diretórios:
+* Garanta que os arquivos / diretórios estejam com os seguintes direitos:
 ```
 chmod 777 runtime/
 chmod 777 web/assets/
+chmod 755 yii
 ```
 
 ### Preparando Codeception. Unidades de teste:
