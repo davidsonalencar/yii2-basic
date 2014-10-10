@@ -44,7 +44,7 @@ No Mac OS, terá que adicionar um caminho no PATH Apache Environment:
 sudo vi /etc/launchd.conf
 ```
 
-* Adiciono o conteúdo abaixo no arquivo:
+* Adicione o conteúdo abaixo no arquivo:
 ```
 setenv PATH /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 ```
