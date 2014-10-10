@@ -38,6 +38,19 @@ expose_php = 0
     </li>
 </ul>
 
+No Mac OS, terá que adicionar um caminho no PATH Apache Environment:
+* Altere o arquivo **launchd.conf**:
+```
+sudo vi /etc/launchd.conf
+```
+
+* Adiciono o conteúdo abaixo no arquivo:
+```
+setenv PATH /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+```
+
+* Salve o arquivo e reinicie a máquina
+
 ## Preparação
 
 Criar uma Alias chamada **/yii2-basic** de **/yii2-basic/web** no arquivo de configuração httpd.conf, como mostro no exemplo abaixo:
