@@ -1,4 +1,4 @@
-webRoot# YII2-BASIC
+# YII2-BASIC
 
 ## Pré-requisitos do sistema
 
