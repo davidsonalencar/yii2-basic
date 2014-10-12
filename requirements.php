@@ -1,14 +1,14 @@
 <?php
 /**
-* Application requirement checker script.
-*
-* In order to run this script use the following console command:
-* php requirements.php
-*
-* In order to run this script from the web, you should copy it to the web root.
-* If you are using Linux you can create a hard link instead, using the following command:
-* ln requirements.php ../requirements.php
-*/
+ * Application requirement checker script.
+ *
+ * In order to run this script use the following console command:
+ * php requirements.php
+ *
+ * In order to run this script from the web, you should copy it to the web root.
+ * If you are using Linux you can create a hard link instead, using the following command:
+ * ln requirements.php ../requirements.php
+ */
 
 // you may need to adjust this path to the correct Yii framework path
 $frameworkPath = dirname(__FILE__) . '/vendor/yiisoft/yii2';
@@ -24,8 +24,8 @@ require_once($frameworkPath . '/requirements/YiiRequirementChecker.php');
 $requirementsChecker = new YiiRequirementChecker();
 
 /**
-* Adjust requirements according to your application specifics.
-*/
+ * Adjust requirements according to your application specifics.
+ */
 $requirements = array(
     // Database :
     array(

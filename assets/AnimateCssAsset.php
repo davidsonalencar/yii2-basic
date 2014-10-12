@@ -17,7 +17,7 @@ use yii\web\AssetBundle;
  */
 class AnimateCssAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/contempory/animate.css';
+    public $sourcePath = '@vendor/bower/animate.css';
     public $css = [
         'animate.min.css',
     ];

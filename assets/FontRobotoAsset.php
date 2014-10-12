@@ -17,7 +17,7 @@ use yii\web\AssetBundle;
  */
 class FontRobotoAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/webfontkit/roboto';
+    public $sourcePath = '@vendor/bower/roboto-fontface';
     public $css = [
         'roboto.css',
     ];

@@ -17,7 +17,7 @@ use yii\web\AssetBundle;
  */
 class FontOpenSansAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/webfontkit/open-sans';
+    public $sourcePath = '@vendor/bower/open-sans-fontface';
     public $css = [
         'open-sans.css',
     ];

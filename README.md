@@ -1,4 +1,4 @@
-# YII2-BASIC
+webRoot# YII2-BASIC
 
 ## Pré-requisitos do sistema
 
@@ -55,8 +55,8 @@ setenv PATH /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 Criar uma Alias chamada **/yii2-basic** de **/yii2-basic/web** no arquivo de configuração httpd.conf, como mostro no exemplo abaixo:
 ```
-Alias /yii2-basic "/webRoot/yii2-basic/web"
-<Directory "/webRoot/yii2-basic/web">
+Alias /yii2-basic "/<webRoot>/yii2-basic/web"
+<Directory "/<webRoot>/yii2-basic/web">
    Options Indexes FollowSymLinks Includes
    AllowOverride All
    Order allow,deny
@@ -64,20 +64,11 @@ Alias /yii2-basic "/webRoot/yii2-basic/web"
 </Directory>
 ```
 
-Altere em **<Directory "webRoot">**, AllowOverride None para AllowOverride All
-```
-<Directory "D:/Webserver/apache/htdocs">
-    ...
-    AllowOverride All
-    ...
-</Directory>
-```
-
 ## Instalação
 
 ### API de desenvolvimento:
 
-* Fazer download do NetBeans 8.0 em https://netbeans.org/downloads/ e instale-o.
+* Fazer download do NetBeans 8.0.1 em https://netbeans.org/downloads/ e instale-o.
 
 ### Preparar projeto:
 
@@ -96,19 +87,22 @@ Para associar as alterações do projeto a sua conta do GitHub, deve realizar as
 
 ### Instalando dependências:
 
-* Via command line, acesse o diretório base da aplicação e execute o comando abaixo para criar o arquivo **composer.phar**: 
+* LINUX/MAC - Via command line, em um diretório temporário, execute o comando abaixo para criar o arquivo **composer.phar** e colocá-lo no PATH da máquina: 
 ```
 php -r "readfile('https://getcomposer.org/installer');" | php
+sudo mv composer.phar /usr/local/bin/composer
 ```
+
+* WINDOWS - Instale o programa [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe). 
 
 * Instalar plugin do Composer para utilizar em conjunto com o Bower:
 ```
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta2"
+composer global require "fxp/composer-asset-plugin:1.0.0-beta2"
 ```
 
 * Execute o comando abaixo para instalar as dependências do projeto. Umar pasta chamada *vendor* será criada:
 ```
-php composer.phar install --prefer-dist 
+composer install --prefer-dist
 ```
 
 ### Direito de escrita nos diretórios:
@@ -122,31 +116,51 @@ chmod 755 yii
 
 ### Preparando Codeception. Unidades de teste:
 
+Os testes serão desenvolvidos do diretório ```/<webRoot>/yii2-basic/tests/codeception``` com o framework [Codeception PHP Testing Framework](http://codeception.com/).
+
 #### Preparação:
 
-* Execute o comando abaixo para construir os conjuntos de testes:
+* Caso o Codeception não esteja já instalado na máquina, execute os comandos a seguir:
 ```
-vendor/bin/codecept build
-```
-
-* Acrescentar o código abaixo como primeira instrução PHP do arquivo **vendor/codeception/codeception/codecept**:
-```
-if (!ini_get('date.timezone')) {
-    date_default_timezone_set('America/Sao_Paulo');
-}
+composer global require "codeception/codeception=2.0.*"
+composer global require "codeception/specify=*"
+composer global require "codeception/verify=*"
 ```
 
-#### Configuração da URL
-
-Garantir que a linha abaixo do arquivo **tests/_bootstrap.php** esteja referenciando o caminho correto do projeto:
+* Caso nunca tenha usado o Composer com pacotes globais, localize a pasta com os pacotes globais pelo comando ```composer global status```. A resultado da execução do comando obterá o diretório como mostro a seguir:
 ```
-defined('TEST_ENTRY_URL') or define('TEST_ENTRY_URL', '/yii2-basic/web/index-test.php');
+Changed current directory to <directory>
 ```
 
-Também garantir que a linha abaixo do arquivo **tests/acceptance.suite.yml** esteja referenciando o domínio correto do projeto. Indicar a porta de existir.
+* Adicione o diretório ```<directory>/vendor/bin``` no PATH da máquina, permitindo que execute o comando ```codecept``` globalmente.
+
+* No diretório raiz do sistema, execute o comando abaixo para criar o banco de dados dos testes:
 ```
-    PhpBrowser:
-        url: 'http://localhost'
+php tests\codeception\bin\yii migrate
 ```
+
+* No diretório ```/<webRoot>/yii2-basic/web```, execute o comando a seguir para iniciar o serviço para a rotina de teste:
+```
+start php -S localhost:8080
+```
+
+* No diretório ```/<webRoot>/yii2-basic/tests```, execute o comando a seguir para criar os conjuntos dos testes:
+```
+codecept build
+```
+
+* Agora, poderá executar os testes de acordo com os comandos a seguir:
+```
+# Executa todos os testes disponíveis
+codecept run
+# Executa os testes de aceitação
+codecept run acceptance
+# Executa os testes funcionais
+codecept run functional
+# Executa os testes unitários
+codecept run unit
+```
+
+Para mais detalhes, consulte o [tutorial do Codeception](http://codeception.com/docs/01-Introduction) para escrever e executar testes de aceitação, funcionais e unitários.
 
 Manual de marcações do README.md http://en.wikipedia.org/wiki/Markdown.
