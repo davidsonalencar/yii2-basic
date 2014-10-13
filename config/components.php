@@ -16,7 +16,7 @@ $config = [
     ],
     'assetManager' => [
         'converter' => [
-            'class' => 'yii\web\AssetConverter',
+            'class' => 'app\components\web\AssetConverter',
             'commands' => [
                 'less' => ['css', 'lessc {from} {to} --no-color'],
             ],
