@@ -116,18 +116,18 @@ chmod 755 yii
 
 ### Preparando Codeception. Unidades de teste:
 
-Os testes serão desenvolvidos do diretório ```/<webRoot>/yii2-basic/tests/codeception``` com o framework [Codeception PHP Testing Framework](http://codeception.com/).
+Os testes serão desenvolvidos no diretório ```/<webRoot>/yii2-basic/tests/codeception``` utilizando o framework [Codeception PHP Testing Framework](http://codeception.com/).
 
 #### Preparação:
 
-* Caso o Codeception não esteja já instalado na máquina, execute os comandos a seguir:
+* Caso o Codeception não esteja instalado na máquina, execute os comandos a seguir:
 ```
 composer global require "codeception/codeception=2.0.*"
 composer global require "codeception/specify=*"
 composer global require "codeception/verify=*"
 ```
 
-* Caso nunca tenha usado o Composer com pacotes globais, localize a pasta com os pacotes globais pelo comando ```composer global status```. A resultado da execução do comando obterá o diretório como mostro a seguir:
+* Caso nunca tenha usado o Composer com pacotes globais, localize a pasta com os pacotes globais pelo comando ```composer global status```. O resultado do comando obterá o diretório:
 ```
 Changed current directory to <directory>
 ```
@@ -136,7 +136,7 @@ Changed current directory to <directory>
 
 * No diretório raiz do sistema, execute o comando abaixo para criar o banco de dados dos testes:
 ```
-php tests\codeception\bin\yii migrate
+php tests/codeception/bin/yii migrate
 ```
 
 * No diretório ```/<webRoot>/yii2-basic/web```, execute o comando a seguir para iniciar o serviço para a rotina de teste:
