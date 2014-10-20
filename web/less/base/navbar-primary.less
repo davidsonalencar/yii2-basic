@@ -1,6 +1,15 @@
 .navbar.main {
     &.navbar-primary {
-        .appbrand { color: #fff; }
+        .app-brand { 
+            color: #fff; 
+            font-weight: 700;
+            line-height: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            img.logo {
+                width: 66px;
+            }
+        }
         border-bottom-color: darken(@primary-color,13%);
         background-color: @primary-color;
         .caret {
