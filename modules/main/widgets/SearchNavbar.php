@@ -40,48 +40,42 @@ class SearchNavbar extends Widget {
         
         $model = new SearchForm();
         
-        echo Html::beginTag('li', [
-           'class' => 'hidden-xs' 
+        $form = ActiveForm::begin([
+            'id' => 'login-form',
+            'options' => ['class' => 'navbar-form navbar-left'],
+            'fieldConfig' => [
+                'template' => "{input}",
+                'labelOptions' => ['class' => 'col-lg-1 control-label'],
+            ],
         ]);
-        
-            $form = ActiveForm::begin([
-                'id' => 'login-form',
-                'options' => ['class' => 'navbar-form navbar-left'],
-                'fieldConfig' => [
-                    'template' => "{input}",
-                    'labelOptions' => ['class' => 'col-lg-1 control-label'],
-                ],
+
+        echo Html::beginTag('div', [
+           'class' => 'input-group' 
+        ]);
+
+            echo $form->field($model, 'nome', [
+                'inputTemplate' => '{input}',
+                'inputOptions' => [
+                    'placeholder' => Yii::t('app', 'Find a user...'),
+                    'autofocus' => '',
+                ]
             ]);
 
             echo Html::beginTag('div', [
-               'class' => 'input-group' 
+                'class' => 'input-group-btn' 
             ]);
 
-                echo $form->field($model, 'nome', [
-                    'inputTemplate' => '{input}',
-                    'inputOptions' => [
-                        'placeholder' => Yii::t('app', 'Find a user...'),
-                        'autofocus' => '',
-                    ]
+                echo Html::submitButton('<i class="fa fa-search"></i>', [
+                    'class' => 'btn btn-inverse', 
+                    'name' => 'login-button'
                 ]);
-
-                echo Html::beginTag('div', [
-                    'class' => 'input-group-btn' 
-                ]);
-
-                    echo Html::submitButton('<i class="fa fa-search"></i>', [
-                        'class' => 'btn btn-inverse', 
-                        'name' => 'login-button'
-                    ]);
-
-                echo Html::endTag('div');
 
             echo Html::endTag('div');
 
-            ActiveForm::end();
-            
-        echo Html::endTag('li');
-        
+        echo Html::endTag('div');
+
+        ActiveForm::end();
+
     }
     
 }

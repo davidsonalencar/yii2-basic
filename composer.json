@@ -29,7 +29,8 @@
         "bower-asset/modernizr": "2.8.3",
         "bower-asset/font-awesome": "v4.2.0",
         "bower-asset/roboto-fontface": "v0.2.4",
-        "bower-asset/open-sans-fontface": "1.1.0"
+        "bower-asset/open-sans-fontface": "1.1.0",
+        "bower-asset/flag-icon-css": "0.6.4"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

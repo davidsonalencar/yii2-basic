@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @link http://www.github.com/davidsonalencar/yii2-basic
  * @copyright Copyright (c) 2014 Davidson Alencar
@@ -9,8 +8,7 @@
 namespace app\modules\main\widgets;
 
 use yii\helpers\Html;
-use yii\bootstrap\Dropdown;
-use yii\bootstrap\Button;
+use app\modules\main\widgets\Dropdown;
 use yii\bootstrap\Widget;
 
 /**
@@ -29,12 +27,12 @@ use yii\bootstrap\Widget;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 201401.1
  */
-class NotificationDropdown extends Widget {
+class IconDropdown extends Widget {
 
     /**
      * @var string Icon Css
      */
-    public $iconCss = 'fa fa-fw fa-envelope-o';
+    public $iconCss = '';
     
     /**
      * @var string Badge class css
@@ -42,15 +40,20 @@ class NotificationDropdown extends Widget {
     public $badgeCss = 'badge badge-primary';
     
     /**
-     * @var string Label template
+     * @var string Icon template
      */
-    public $labelTemplate = '<i class="{icon_css}"></i>';
+    public $iconTemplate = '<i class="{icon_css}"></i>';
     
     /**
      * @var string Badge template
      */
     public $badgeTemplate = '<span class="{badge_css}">{badge_count}</span>';
 
+    /**
+     * @var string Label
+     */
+    public $label = '';
+    
     /**
      * @var array the HTML attributes of the button.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
@@ -71,20 +74,26 @@ class NotificationDropdown extends Widget {
      * @var integer Badge count
      */
     public $badgeCount = 0;
+    
+    /**
+     * @var string Caret teplate
+     */
+    public $caretTemplate = '<span class="caret"></span>';
+    
+    /**
+     * @var boolean Show or hide caret icon
+     */
+    public $showCaret = false;
+    
 
     /**
      * Renders the widget.
      */
     public function run() {
 
-        echo Html::beginTag('li', [
-            'class' => 'dropdown notification',
-        ]);
-
         echo "\n" . $this->renderIcon();
         echo "\n" . $this->renderDropdown();
 
-        echo Html::endTag('li');
     }
 
     /**
@@ -95,9 +104,11 @@ class NotificationDropdown extends Widget {
 
         Html::addCssClass($this->options, 'menu-icon dropdown-toggle dropdown-hover');
 
-        $label = strtr($this->labelTemplate, [
-            '{icon_css}' => $this->iconCss
-        ]);
+        $label = $this->label;
+        
+        $label = trim($label . ' ' . strtr($this->iconTemplate, [
+            '{icon_css}' => $this->iconCss,
+        ]));
         
         if ($this->badgeCount > 0) {
             $label .= strtr($this->badgeTemplate, [
@@ -105,7 +116,12 @@ class NotificationDropdown extends Widget {
                 '{badge_count}' => $this->badgeCount,
             ]);
         }
-                 
+        
+        // Caret Icon
+        if ($this->showCaret) {
+            $label .= ' <span class="caret"></span>';
+        }
+        
         $options = $this->options;
         if (!isset($options['href'])) {
             $options['href'] = 'javascript:;';

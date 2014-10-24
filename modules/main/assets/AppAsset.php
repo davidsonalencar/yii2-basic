@@ -31,5 +31,6 @@ class AppAsset extends AssetBundle
         'app\assets\FontAwesomeAsset',
         'app\assets\FontRobotoAsset',
         'app\assets\FontOpenSansAsset',
+        'app\assets\FlagIconCssAsset',
     ];
 }

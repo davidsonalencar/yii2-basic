@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use yii\bootstrap\ButtonDropdown;
+use yii\bootstrap\Button;
 use app\modules\main\assets\AppAsset;
 use app\modules\main\widgets\SearchNavbar;
-use app\modules\main\widgets\NotificationDropdown;
+use app\modules\main\widgets\IconDropdown;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -44,30 +44,89 @@ AppAsset::register($this);
             ],
         ]);
             
+            // LEFT NAV
             $nav = Nav::begin([
                 'options' => [
                     'class' => 'nav navbar-nav navbar-left hidden-xs',  
                 ],
             ]);
             
-            $nav->items[] = SearchNavbar::widget();
-            
-            $nav->items[] = NotificationDropdown::widget([
-                'iconCss' => 'fa fa-fw fa-envelope-o',
-                'badgeCount' => 3,
-                'dropdown' => [
-                    'items' => [
-                        ['label' => 'DropdownA', 'url' => '/'],
-                        ['label' => 'DropdownB', 'url' => '#'],
+                $nav->items[] = Html::tag('li', SearchNavbar::widget(), [
+                    'class' => 'hidden-xs' 
+                ]);
+                        
+                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                    'iconCss' => 'fa fa-fw fa-envelope-o',
+                    'badgeCount' => 3,
+                    'dropdown' => [
+                        'items' => [
+                            ['label' => 'DropdownA', 'url' => '/'],
+                            ['label' => 'DropdownB', 'url' => '#'],
+                        ],
                     ],
-                ],
-            ]);
+                ]), [
+                    'class' => 'dropdown notification',
+                ]);
+
+                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                    'iconCss' => 'fa fa-fw fa-exclamation-circle',
+                    'badgeCount' => 2,
+                    'dropdown' => [
+                        'items' => [
+                            ['label' => 'DropdownA', 'url' => '/'],
+                            ['label' => 'DropdownB', 'url' => '#'],
+                        ],
+                    ],
+                ]), [
+                    'class' => 'dropdown notification',
+                ]);
+
+                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                    'iconCss' => 'flag-icon flag-icon-us',
+                    'dropdown' => [
+                        'options' => [
+                            'class' => 'dropdown-language',
+                        ],
+                        'items' => [
+                            ['iconCss' => 'flag-icon flag-icon-br', 'url' => '/'],
+                            ['iconCss' => 'flag-icon flag-icon-es', 'url' => '#'],
+                        ],
+                    ],
+                ]), [
+                    'class' => 'dropdown notification',
+                ]);
             
             Nav::end();
             
+            // RIGHT NAV
+            $nav = Nav::begin([
+                'options' => [
+                    'class' => 'nav navbar-nav pull-right',  
+                ],
+            ]);
             
+                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                    'label' => '<img class="img-circle" alt="" src="http://cdn.mosaicpro.biz/flatplus/php/assets/images/people/35/8.jpg"> Davidson Alencar',
+                    'showCaret' => true,
+                    'dropdown' => [
+                        'items' => [
+                            ['iconCss' => 'fa fa-user', 'label' => 'Your Profile', 'url' => '#1'],
+                            ['iconCss' => 'fa fa-pencil', 'label' => 'Edit Account', 'url' => '#2'],
+                            ['iconCss' => 'fa fa-question-circle', 'label' => 'Get Help', 'url' => '#3'],
+                            ['iconCss' => 'fa fa-sign-out ', 'label' => 'Logout', 'url' => '#4'],
+                        ],
+                    ],
+                ]), [
+                    'class' => 'user',
+                ]);
                 
+                $nav->items[] = Button::widget([
+                    'tagName' => 'a',
+                    'label' => '',
+                ]);
 
+            Nav::end();            
+            
         //echo app\modules\menu\widgets\Menu::widget();
 
         NavBar::end();

@@ -109,9 +109,6 @@ body { padding-top: @navbarMainHeight; }
         }
         &:hover i { color:#ccc; }
     }
-
-
-    .user { font-size: 14px !important;}
     .navbar-right { 
         height: @navbarMainHeight;
         &:last-child {
@@ -187,6 +184,20 @@ body { padding-top: @navbarMainHeight; }
             }
         }
     }
+    .dropdown-language {
+        width: auto;
+        min-width: 0;
+        > li {
+            > a {
+                padding: 0 13px;
+                > i {
+                    height: 30px;
+                    width: 28px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
     .navbar-form {
         padding: 0;
         margin: 0px;
@@ -244,6 +255,21 @@ body { padding-top: @navbarMainHeight; }
             > a {
                 padding: 0 5px;
                 > .badge { margin-left: -8px; }
+            }
+        }
+        &.user {
+            > a {
+                font-size: 14px !important;
+            }
+            > ul {
+                min-width: 0;
+                a {
+                    padding-left: 15px;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+                
             }
         }
         a.menu-icon {
