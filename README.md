@@ -165,4 +165,6 @@ codecept run unit
 
 Para mais detalhes, consulte o [tutorial do Codeception](http://codeception.com/docs/01-Introduction) para escrever e executar testes de aceitação, funcionais e unitários.
 
+Veja também o documento do Yii2 de preparação do [Codeception](https://github.com/yiisoft/yii2/blob/master/docs/guide/test-environment-setup.md).
+
 Manual de marcações do README.md http://en.wikipedia.org/wiki/Markdown.
