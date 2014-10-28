@@ -76,7 +76,7 @@ class Menu {
             $result = static::getItemsRecursivo( $direitos );
         }
 
-        $result[] = static::getItemLogout();
+        //$result[] = static::getItemLogout();
 
         self::resolveCache()->set('menu', $result);
 
@@ -88,14 +88,14 @@ class Menu {
      * Verifica se deve permanecer aqui quando desenvolver o layout admin
      * @return array
      */
-    private static function getItemLogout() {
-        
-        return [
-            'label' => 'Logout (' . Yii::$app->user->identity->nome . ')',
-            'url' => [ '/logout' ],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
+//    private static function getItemLogout() {
+//        
+//        return [
+//            'label' => 'Logout (' . Yii::$app->user->identity->nome . ')',
+//            'url' => [ '/logout' ],
+//            'linkOptions' => ['data-method' => 'post']
+//        ];
+//    }
     
     /**
      * Returns cache component configured as in cacheId

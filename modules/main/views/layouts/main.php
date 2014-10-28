@@ -81,21 +81,6 @@ AppAsset::register($this);
                     'class' => 'dropdown notification',
                 ]);
 
-                $nav->items[] = Html::tag('li', IconDropdown::widget([
-                    'iconCss' => 'flag-icon flag-icon-us',
-                    'dropdown' => [
-                        'options' => [
-                            'class' => 'dropdown-language',
-                        ],
-                        'items' => [
-                            ['iconCss' => 'flag-icon flag-icon-br', 'url' => '/'],
-                            ['iconCss' => 'flag-icon flag-icon-es', 'url' => '#'],
-                        ],
-                    ],
-                ]), [
-                    'class' => 'dropdown notification',
-                ]);
-            
             Nav::end();
             
             // RIGHT NAV
@@ -120,18 +105,42 @@ AppAsset::register($this);
                     'class' => 'user',
                 ]);
                 
-                $nav->items[] = Button::widget([
-                    'tagName' => 'a',
-                    'label' => '',
+                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                    'iconCss' => 'flag-icon flag-icon-us',
+                    'dropdown' => [
+                        'options' => [
+                            'class' => 'dropdown-language',
+                        ],
+                        'items' => [
+                            ['iconCss' => 'flag-icon flag-icon-br', 'url' => '/'],
+                            ['iconCss' => 'flag-icon flag-icon-es', 'url' => '#'],
+                        ],
+                    ],
+                ]), [
+                    'class' => 'dropdown notification',
                 ]);
-
+                
+                $nav->items[] = Html::tag('li', 
+                    Html::tag('a', '<i class="fa fa-sign-out"></i>', [
+                        'class' => 'menu-icon',
+                        'title' => 'Sair',
+                        'href' => '#',
+                    ])
+                );                
+                
             Nav::end();            
             
-        //echo app\modules\menu\widgets\Menu::widget();
-
         NavBar::end();
         ?>
-
+        
+        <div id="menu" class="hidden-print hidden-xs">
+            <div class="sidebar sidebar-default">
+                <div class="sidebar-menu-wrapper">
+                    <?= app\modules\menu\widgets\Menu::widget() ?>
+                </div>
+            </div>
+        </div>
+        
         <div class="container">
             <?=
             Breadcrumbs::widget([

@@ -14,7 +14,7 @@ class Menu extends \yii\bootstrap\Nav {
     
     public function run() {
         
-        $this->options['class'] .= ' navbar-nav navbar-right';
+        //$this->options['class'] .= ' navbar-nav navbar-right';
         
         $this->items = MenuHelper::getItems();
         
