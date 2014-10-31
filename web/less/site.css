@@ -1423,6 +1423,7 @@ body {
 .navbar.main.navbar-primary .navbar-form input {
   background-color: #354f7e;
   color: #fff;
+  box-shadow: none;
 }
 .navbar.main.navbar-primary .navbar-form ::-webkit-input-placeholder {
   color: #6988c0;

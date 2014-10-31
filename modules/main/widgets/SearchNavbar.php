@@ -41,7 +41,7 @@ class SearchNavbar extends Widget {
         $model = new SearchForm();
         
         $form = ActiveForm::begin([
-            'id' => 'login-form',
+            'id' => 'search-form',
             'options' => ['class' => 'navbar-form navbar-left'],
             'fieldConfig' => [
                 'template' => "{input}",
