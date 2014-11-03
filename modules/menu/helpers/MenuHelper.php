@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
  *
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  */
-class Menu {
+class MenuHelper {
     
     /**
      * Retorna a identidade do usuário logado
