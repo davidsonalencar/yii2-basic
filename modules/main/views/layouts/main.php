@@ -7,7 +7,7 @@ use yii\widgets\Breadcrumbs;
 use yii\bootstrap\Button;
 use app\modules\main\assets\AppAsset;
 use app\modules\main\widgets\SearchNavbar;
-use app\modules\main\widgets\IconDropdown;
+use app\modules\main\widgets\IconButton;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -55,7 +55,7 @@ AppAsset::register($this);
                     'class' => 'hidden-xs' 
                 ]);
                         
-                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                $nav->items[] = Html::tag('li', IconButton::widget([
                     'iconCss' => 'fa fa-fw fa-envelope-o',
                     'badgeCount' => 3,
                     'dropdown' => [
@@ -68,7 +68,7 @@ AppAsset::register($this);
                     'class' => 'dropdown notification',
                 ]);
 
-                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                $nav->items[] = Html::tag('li', IconButton::widget([
                     'iconCss' => 'fa fa-fw fa-exclamation-circle',
                     'badgeCount' => 2,
                     'dropdown' => [
@@ -90,7 +90,7 @@ AppAsset::register($this);
                 ],
             ]);
             
-                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                $nav->items[] = Html::tag('li', IconButton::widget([
                     'label' => '<img class="img-circle" alt="" src="http://cdn.mosaicpro.biz/flatplus/php/assets/images/people/35/8.jpg"> Davidson Alencar',
                     'showCaret' => true,
                     'dropdown' => [
@@ -105,7 +105,7 @@ AppAsset::register($this);
                     'class' => 'user',
                 ]);
                 
-                $nav->items[] = Html::tag('li', IconDropdown::widget([
+                $nav->items[] = Html::tag('li', IconButton::widget([
                     'iconCss' => 'flag-icon flag-icon-us',
                     'dropdown' => [
                         'options' => [
@@ -124,7 +124,7 @@ AppAsset::register($this);
                     Html::tag('a', '<i class="fa fa-sign-out"></i>', [
                         'class' => 'menu-icon',
                         'title' => 'Sair',
-                        'href' => '#',
+                        'href' => '/logout',
                     ])
                 );                
                 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @link http://www.github.com/davidsonalencar/yii2-basic
  * @copyright Copyright (c) 2014 Davidson Alencar

@@ -13,7 +13,7 @@ use app\modules\menu\helpers\MenuHelper;
  *
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  */
-class Menu extends \yii\bootstrap\Widget {
+class Menu extends \app\modules\main\widgets\Nav {
 
     /**
      * @var array list of items in the nav widget. Each array element represents a single
@@ -30,11 +30,11 @@ class Menu extends \yii\bootstrap\Widget {
      *
      * If a menu item is a string, it will be rendered directly without HTML encoding.
      */
-    public $items = [];
+    /*public $items = [];
     
     public $itemOptions = [];
     
-    public $dataToggle = 'collapse';
+    public $dataToggle = 'collapse';*/
     
     /**
      * Renders the widget.
@@ -45,16 +45,18 @@ class Menu extends \yii\bootstrap\Widget {
 
         $this->items = MenuHelper::getItems();
         
-        echo $this->renderItems( $this->items, $this->options );
+        //echo $this->renderItems( $this->items, $this->options );
         
-        BootstrapAsset::register($this->getView());
+        //BootstrapAsset::register($this->getView());
+        
+        parent::run();
     }
 
     /**
      * Renders widget items.
      * @param array $options
      * @return string
-     */
+     *//*
     public function renderItems($items, $options) {
         $itemsVisible = [];
         foreach ($items as $i => $item) {
@@ -66,14 +68,14 @@ class Menu extends \yii\bootstrap\Widget {
         }
 
         return Html::tag('ul', implode("\n", $itemsVisible), $options);
-    }
+    }*/
 
     /**
      * Renders a widget's item.
      * @param string|array $item the item to render.
      * @return string the rendering result.
      * @throws InvalidConfigException
-     */
+     *//*
     public function renderItem($item) {
         if (is_string($item)) {
             return $item;
@@ -114,5 +116,5 @@ class Menu extends \yii\bootstrap\Widget {
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
     }
-
+*/
 }

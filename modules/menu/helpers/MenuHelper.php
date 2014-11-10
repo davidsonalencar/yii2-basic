@@ -35,6 +35,7 @@ class MenuHelper {
                 
                 $item = [
                     'label' => $direito['label'],
+                    'iconCss' => $direito['icon'],
                     'url' => [ '/'. ( !empty($direito['url']) ? $direito['url'] : $direito['id_direito'] ) ],
                 ];
                 

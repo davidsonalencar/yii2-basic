@@ -27,7 +27,7 @@ use yii\bootstrap\Widget;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 201401.1
  */
-class IconDropdown extends Widget {
+class IconButton extends Widget {
 
     /**
      * @var string Icon Css

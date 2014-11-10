@@ -10,6 +10,7 @@ use app\models\queries\DireitoQuery;
  *
  * @property integer $id_direito
  * @property integer $id_direito_pai
+ * @property string $icon
  * @property string $label
  * @property string $url
  * @property integer $posicao
@@ -58,6 +59,7 @@ class Direito extends \yii\db\ActiveRecord {
         return [
             'id_direito' => Yii::t('app', 'Id Direito'),
             'id_direito_pai' => Yii::t('app', 'Id Direito Pai'),
+            'icon' => Yii::t('app', 'Icon'),
             'label' => Yii::t('app', 'Label'),
             'url' => Yii::t('app', 'Url'),
             'posicao' => Yii::t('app', 'Posicao'),
