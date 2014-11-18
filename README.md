@@ -28,6 +28,11 @@ Desabilitar [Expose PHP](http://lv1.php.net/manual/en/ini.core.php#ini.expose-ph
 expose_php = 0
 ```
 
+Modifique o parâmetro a seguir, a fim de evitar muitas chamadas desnecessárias ao comando `stat()` do sistema:
+```
+cgi.fix_pathinfo=0
+```
+
 ## Pré-requisitos para ambiente de desenvolvimento
 <ul>
     <li>JDK 7</li>
