@@ -102,7 +102,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 * Instalar plugin do Composer para utilizar em conjunto com o Bower:
 ```
-composer global require "fxp/composer-asset-plugin:1.0.0-beta3"
+composer global require "fxp/composer-asset-plugin:1.0.0-beta4"
 ```
 
 * Execute o comando abaixo para instalar as dependências do projeto. Umar pasta chamada *vendor* será criada:
