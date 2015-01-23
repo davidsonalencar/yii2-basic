@@ -35,7 +35,7 @@ class MenuHelper {
                 
                 $item = [
                     'label' => $direito['label'],
-                    'iconCss' => $direito['icon'],
+                    'iconCss' => isset($direito['icon'])?$direito['icon']:'',
                     'url' => [ '/'. ( !empty($direito['url']) ? $direito['url'] : $direito['id_direito'] ) ],
                 ];
                 
@@ -57,7 +57,7 @@ class MenuHelper {
      */
     public static function getItems() {
         
-     //   $result = self::resolveCache()->get('menu');
+        //$result = self::resolveCache()->get('menu');
         
         if (!empty($result)) {
             return $result;
@@ -72,11 +72,11 @@ class MenuHelper {
         }
 
         $direitos = $identity->getTodosDireitos()->menu()->orderBy('id_direito_pai, posicao')->asArray()->all();
-        
+
         if (ArrayHelper::count($direitos) > 0) {
             $result = static::getItemsRecursivo( $direitos );
         }
-
+        
         //$result[] = static::getItemLogout();
 
         self::resolveCache()->set('menu', $result);
