@@ -6,16 +6,7 @@ use Yii;
 
 class AccessControl extends \yii\filters\AccessControl {
 
-    /**
-     * @inheritdoc
-     */
-    public function init() {
-        
-        $this->initRules();
-                  
-        parent::init();
-    }
-    
+
     /**
      * Inicializa rules, para controle de acesso as páginas.
      * A propriedade $roles receberá a rota da página (ex.: site/index) para 
@@ -23,8 +14,10 @@ class AccessControl extends \yii\filters\AccessControl {
      * Essa checagem está sendo verificasa junto a classe app\components\rbac\DbManager
      * e a classe yii\filters\AccessRule.
      */
-    private function initRules() {
+
+    public function beforeAction($action) {
         
+        // Obtém a rota atual e verifica junto ao banco de dados se permite ou não
         $this->rules[] = [
             'allow' => true,
             'roles' => [
@@ -32,6 +25,25 @@ class AccessControl extends \yii\filters\AccessControl {
             ]
         ];
         
+        // Permite a ação login desde que esteja deslogado
+        $this->rules[] = [
+            'allow' => true,
+            'actions' => ['login'],
+            'roles' => ['?'],
+        ];
+        
+        // Permite a ação logout desde que esteja logado
+        $this->rules[] = [
+            'allow' => true,
+            'actions' => ['logout'],
+            'roles' => ['@'],
+        ];
+        
+        // Inicializa as rules
+        $this->init();        
+        
+        // Executa o beforeAction da classe pai
+        return parent::beforeAction($action);
     }
-    
+
 }

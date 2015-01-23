@@ -10,18 +10,11 @@ class Controller extends \yii\web\Controller {
      * Layout default
      * @var string
      */
-    public $layout = 'main';
+    //public $layout = 'main';
     
     /**
      * @inheritdoc
      */
-    public function behaviors() {
-
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-            ]
-        ];
-    }
+    
 
 }

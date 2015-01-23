@@ -20,6 +20,9 @@ class AccountController extends \app\components\web\Controller {
             ],
         ];
         
+        
+        /*
+         * usado no AccessControl
         $config['access'] = ArrayHelper::merge($config['access'], [
             'rules' => [
                 [
@@ -33,7 +36,7 @@ class AccountController extends \app\components\web\Controller {
                     'roles' => ['@'],
                 ],
             ]
-        ]);
+        ]);*/
         
         return $config;
     }

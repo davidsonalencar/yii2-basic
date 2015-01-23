@@ -1,14 +1,27 @@
 <?php
 
 $config = [
+    // Nome do aplicativo
     'name' => 'My Company',
+    // Identificador
     'id' => 'basic',
+    // Idioma padrão
     'language' => 'pt-BR',
+    // Diretório base do aplicativo
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    // Fuso horário
     'timezone' => 'America/Sao_Paulo',
+    // Nome do layout padrão
+    'layout' => 'main',
+    // Local do layout padrão
+    'layoutPath' => '@app/modules/main/views/layouts',    
+    // Registro dos componentes
     'components' => require(__DIR__ . '/components.php'),
+    // Parâmetros
     'params' => require(__DIR__ . '/params.php'),
+    // Módulos/Componentes que serão executados em cada requisição
+    'bootstrap' => ['log'],
+    // Registro dos módulos
     'modules' => [
         'user' => [
             'class' => 'app\modules\user\UserModule',
@@ -17,6 +30,10 @@ $config = [
             'class' => 'app\modules\main\MainModule',
         ],
     ],
+    // Implementa controle de acesso em todos os controllers
+    'as access' => [
+        'class' => 'app\components\filters\AccessControl',
+    ]
 ];
 
 if (YII_ENV_DEV) {
