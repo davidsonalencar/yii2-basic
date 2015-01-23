@@ -33,10 +33,12 @@ class Dropdown extends \yii\bootstrap\Dropdown {
     /**
      * Renders menu items.
      * @param array $items the menu items to be rendered
+     * @param array $options the container HTML attributes
      * @return string the rendering result.
      * @throws InvalidConfigException if the label option is not specified in one of the items.
      */
-    protected function renderItems($items) {
+    protected function renderItems($items, $options = []) {
+        
         $lines = [];
         foreach ($items as $i => $item) {
             if (isset($item['visible']) && !$item['visible']) {
@@ -68,19 +70,29 @@ class Dropdown extends \yii\bootstrap\Dropdown {
             }
             $label = trim($icon . ' ' . $label);
             
-            $options = ArrayHelper::getValue($item, 'options', []);
+            $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
             $linkOptions['tabindex'] = '-1';
-            $content = Html::a($label, ArrayHelper::getValue($item, 'url', '#'), $linkOptions);
-            if (!empty($item['items'])) {
-                unset($this->_containerOptions['id']);
-                $content .= $this->renderItems($item['items']);
-                Html::addCssClass($options, 'dropdown-submenu');
+            $url = array_key_exists('url', $item) ? $item['url'] : null;
+            if (empty($item['items'])) {
+                if ($url === null) {
+                    $content = $label;
+                    Html::addCssClass($itemOptions, 'dropdown-header');
+                } else {
+                    $content = Html::a($label, $url, $linkOptions);
+                }
+            } else {
+                $submenuOptions = $options;
+                unset($submenuOptions['id']);
+                $content = Html::a($label, $url === null ? '#' : $url, $linkOptions)
+                    . $this->renderItems($item['items'], $submenuOptions);
+                Html::addCssClass($itemOptions, 'dropdown-submenu');
             }
-            $lines[] = Html::tag('li', $content, $options);
+
+            $lines[] = Html::tag('li', $content, $itemOptions);
         }
 
-        return Html::tag('ul', implode("\n", $lines), $this->_containerOptions);
+        return Html::tag('ul', implode("\n", $lines), $options);
     }
 
 }
