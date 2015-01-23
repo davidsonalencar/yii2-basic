@@ -29,7 +29,7 @@ class LoginAsset extends AssetBundle {
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        'app\assets\AnimateCssAsset',
+        //'app\assets\AnimateCssAsset',
     ];
 
 }
