@@ -2,12 +2,12 @@
 
 namespace app\modules\user\controllers;
 
+use app\modules\user\forms\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
-use app\modules\user\forms\LoginForm;
-use yii\helpers\ArrayHelper;
-
-class AccountController extends \app\components\web\Controller {
+use yii\web\Controller;
+    
+class AccountController extends Controller {
 
     public function behaviors() {
 

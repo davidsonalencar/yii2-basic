@@ -4,7 +4,7 @@ namespace app\modules\main\controllers;
 
 use yii\web\Controller;
 
-class DefaultController extends \app\components\web\Controller {
+class DefaultController extends Controller {
 
     public function actions() {
         return [

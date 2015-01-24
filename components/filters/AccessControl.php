@@ -25,11 +25,12 @@ class AccessControl extends \yii\filters\AccessControl {
             ]
         ];
         
-        // Permite a ação login desde que esteja deslogado
+        // Permite a ação de error desde que esteja logado.
+        // Quando deslogado será redirecionado para a tela de login
         $this->rules[] = [
             'allow' => true,
-            'actions' => ['login'],
-            'roles' => ['?'],
+            'actions' => ['error'],
+            'roles' => ['@'],
         ];
         
         // Permite a ação logout desde que esteja logado
@@ -37,6 +38,13 @@ class AccessControl extends \yii\filters\AccessControl {
             'allow' => true,
             'actions' => ['logout'],
             'roles' => ['@'],
+        ];
+        
+        // Permite a ação login desde que esteja deslogado
+        $this->rules[] = [
+            'allow' => true,
+            'actions' => ['login'],
+            'roles' => ['?'],
         ];
         
         // Inicializa as rules

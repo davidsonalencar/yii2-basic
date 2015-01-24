@@ -124,7 +124,8 @@ AppAsset::register($this);
                     Html::tag('a', '<i class="fa fa-sign-out"></i>', [
                         'class' => 'menu-icon',
                         'title' => 'Sair',
-                        'href' => '/logout',
+                        'href' => 'logout',
+                        'data-method' => 'post',
                     ])
                 );                
                 

@@ -43,19 +43,19 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] =  [
         'class' => 'yii\gii\Module',      
         //'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '192.168.178.20'],  
-        'generators' => [ 
-            'controller' => [
-                'class' => 'app\components\gii\generators\controller\Generator', //class generator
-                //'templates' => [ //setting for out templates
-                //    'controllerAuth' => '@app/components/gii/generators/controller/default', //name template => path to template
-                //]                
-            ],
-            //'crud' => [],
-            //'extension' => [],
-            //'form' => [],
-            //'model' => [],
-            //'module' => [],
-        ],
+//        'generators' => [ 
+//            'controller' => [
+//                'class' => 'app\components\gii\generators\controller\Generator', //class generator
+//                //'templates' => [ //setting for out templates
+//                //    'controllerAuth' => '@app/components/gii/generators/controller/default', //name template => path to template
+//                //]                
+//            ],
+//            //'crud' => [],
+//            //'extension' => [],
+//            //'form' => [],
+//            //'model' => [],
+//            //'module' => [],
+//        ],
     ];
 }
 
