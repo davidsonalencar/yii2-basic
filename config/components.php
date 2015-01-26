@@ -1,6 +1,7 @@
 <?php
 
 $config = [
+    // Gerenciamento de URL
     'urlManager' => [
         'class' => 'yii\web\UrlManager',
         'enablePrettyUrl' => true,
@@ -11,9 +12,7 @@ $config = [
             '' => 'main/default/index',
         ]
     ],
-    'authManager' => [
-        'class' => 'app\components\rbac\DbManager',
-    ],
+    // Gerenciamento de assets
     'assetManager' => [
         'converter' => [
             /*'class' => 'app\components\web\AssetConverter',*/
@@ -23,21 +22,29 @@ $config = [
             ],
         ],
     ],
+    // Gerenciamento da requisição
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
         'enableCookieValidation' => true,
         'enableCsrfValidation' => true,
         'cookieValidationKey' => 'c5eec1dc0b0c568db4fc2956614925bd',
     ],
+    // Forma que a aplicação realiza o cache
     'cache' => [
         'class' => 'app\components\caching\SessionCache',
     ],
+    // Controle de autenticação
     'user' => [
         'class' => 'app\components\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
         'loginUrl' => 'login',
     ],
+    // Controle de acesso
+    'authManager' => [
+        'class' => 'app\components\rbac\DbManager',
+    ],
+    // Internacionalização
     'i18n' => [
         'translations' => [
             'app*' => [
@@ -51,9 +58,11 @@ $config = [
             ],
         ],
     ],
+    // Manipulador de erros
     'errorHandler' => [
         'errorAction' => 'main/default/error',
     ],
+    // Gerenciamento de emails
     'mailer' => [
         'class' => 'yii\swiftmailer\Mailer',
         // send all mails to a file by default. You have to set
@@ -61,6 +70,7 @@ $config = [
         // for the mailer to send real emails.
         'useFileTransport' => true,
     ],
+    // Gerenciamento de log
     'log' => [
         'traceLevel' => YII_DEBUG ? 3 : 0,
         'targets' => [
@@ -70,9 +80,11 @@ $config = [
             ],
         ],
     ],
+    // Conexão com o banco de dados
     'db' => require(__DIR__ . '/db.php'),
 ];
 
+// Se não estiver no ambiente de desenvolvimento utilizará os arquivos comprimidos e unificados
 if (!YII_ENV_DEV) {
     $config['assetManager']['bundles'] = require(__DIR__ . '/assets_compressed.php');
 }

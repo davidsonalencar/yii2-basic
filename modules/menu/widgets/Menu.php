@@ -13,7 +13,8 @@ use app\modules\menu\helpers\MenuHelper;
  *
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  */
-class Menu extends \app\modules\main\widgets\Nav {
+class Menu extends \yii\bootstrap\Nav //\app\modules\main\widgets\Nav 
+{
 
     /**
      * @var array list of items in the nav widget. Each array element represents a single

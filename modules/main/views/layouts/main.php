@@ -2,12 +2,12 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use app\modules\main\widgets\NavBar;
 use yii\widgets\Breadcrumbs;
-use yii\bootstrap\Button;
 use app\modules\main\assets\AppAsset;
-use app\modules\main\widgets\SearchNavbar;
-use app\modules\main\widgets\IconButton;
+use app\modules\main\widgets\NavSearch;
+//use app\modules\main\widgets\IconButton;
+use app\modules\main\widgets\NavNotification;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -29,46 +29,30 @@ AppAsset::register($this);
         <?php $this->beginBody() ?>
         
         <?php
-        NavBar::begin([
-            'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/img/logo.png', [
-                'class' => 'logo',
-                'alt' => Yii::$app->name,
-            ]),
-            'brandUrl' => Yii::$app->homeUrl,
-            'brandOptions' => [
-                'class' => 'app-brand',
-            ],
-            'options' => [
-                'class' => 'navbar-fixed-top navbar-primary main',
-                'tag' => 'div',
-            ],
-        ]);
+        
+        // INICIO - TOP NAVBAR
+        NavBar::begin();
             
-            // LEFT NAV
+            // INICIO - LEFT NAV
             $nav = Nav::begin([
                 'options' => [
                     'class' => 'nav navbar-nav navbar-left hidden-xs',  
                 ],
             ]);
-            
-                $nav->items[] = Html::tag('li', SearchNavbar::widget(), [
+                
+                // SEARCH NAV
+                $nav->items[] = Html::tag('li', NavSearch::widget(), [
                     'class' => 'hidden-xs' 
                 ]);
-                        
-                $nav->items[] = Html::tag('li', IconButton::widget([
-                    'iconCss' => 'fa fa-fw fa-envelope-o',
-                    'badgeCount' => 3,
-                    'dropdown' => [
-                        'items' => [
-                            ['label' => 'DropdownA', 'url' => '/'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
-                    ],
-                ]), [
+
+                // TERAFAS PENDENTES NAV
+                
+                // NOTIFICATION NAV
+                $nav->items[] = Html::tag('li', NavNotification::widget(), [
                     'class' => 'dropdown notification',
                 ]);
 
-                $nav->items[] = Html::tag('li', IconButton::widget([
+                /*$nav->items[] = Html::tag('li', IconButton::widget([
                     'iconCss' => 'fa fa-fw fa-exclamation-circle',
                     'badgeCount' => 2,
                     'dropdown' => [
@@ -79,17 +63,18 @@ AppAsset::register($this);
                     ],
                 ]), [
                     'class' => 'dropdown notification',
-                ]);
-
+                ]);*/
+                
+            // FIM - LEFT NAV
             Nav::end();
             
-            // RIGHT NAV
+            // INICIO - RIGHT NAV
             $nav = Nav::begin([
                 'options' => [
                     'class' => 'nav navbar-nav pull-right',  
                 ],
             ]);
-            
+            /*
                 $nav->items[] = Html::tag('li', IconButton::widget([
                     'label' => '<img class="img-circle" alt="" src="http://cdn.mosaicpro.biz/flatplus/php/assets/images/people/35/8.jpg"> Davidson Alencar',
                     'showCaret' => true,
@@ -119,7 +104,7 @@ AppAsset::register($this);
                 ]), [
                     'class' => 'dropdown notification',
                 ]);
-                
+                */
                 $nav->items[] = Html::tag('li', 
                     Html::tag('a', '<i class="fa fa-sign-out"></i>', [
                         'class' => 'menu-icon',
@@ -128,9 +113,11 @@ AppAsset::register($this);
                         'data-method' => 'post',
                     ])
                 );                
-                
+            
+            // FIM - RIGHT NAV
             Nav::end();            
             
+        // FIM - TOP NAVBAR
         NavBar::end();
         ?>
         

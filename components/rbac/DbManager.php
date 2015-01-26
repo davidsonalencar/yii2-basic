@@ -4,6 +4,7 @@ namespace app\components\rbac;
 
 use Yii;
 
+//RbacCached
 class DbManager extends \yii\rbac\DbManager {
 
     /**

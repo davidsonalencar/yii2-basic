@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 $config = [
     // Nome do aplicativo
@@ -20,7 +20,9 @@ $config = [
     // Parâmetros
     'params' => require(__DIR__ . '/params.php'),
     // Módulos/Componentes que serão executados em cada requisição
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+    ],
     // Registro dos módulos
     'modules' => [
         'user' => [
@@ -28,6 +30,9 @@ $config = [
         ],
         'main' => [
             'class' => 'app\modules\main\MainModule',
+        ],
+        'menu' => [
+            'class' => 'app\modules\menu\MenuModule',
         ],
     ],
     // Implementa controle de acesso em todos os controllers

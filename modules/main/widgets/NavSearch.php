@@ -29,7 +29,7 @@ use Yii;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 201401.1
  */
-class SearchNavbar extends Widget {
+class NavSearch extends Widget {
     
     public function init() {
         parent::init();
