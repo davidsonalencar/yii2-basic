@@ -14,12 +14,15 @@ $config = [
     ],
     // Gerenciamento de assets
     'assetManager' => [
+        'appendTimestamp' => true,
+        'forceCopy' => YII_ENV_DEV,
         'converter' => [
             /*'class' => 'app\components\web\AssetConverter',*/
             'forceConvert' => YII_ENV_DEV,
-            //'commands' => [
-                //'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
-            //],
+            
+            'commands' => [
+                'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
+            ],
         ],
     ],
     // Gerenciamento da requisição
@@ -35,7 +38,7 @@ $config = [
     ],
     // Controle de autenticação
     'user' => [
-        'class' => 'app\components\web\User',
+        'class' => 'app\modules\user\components\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
         'loginUrl' => 'login',
