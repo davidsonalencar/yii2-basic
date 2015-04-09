@@ -21,7 +21,6 @@ class LoginAsset extends AssetBundle {
     public $baseImg = '@web/imgs';
     public $css = [
         'css/login.css',
-        'css/animate.delay.min.css',
     ];
     public $js = [
         'js/login.parallax.init.js',
@@ -29,7 +28,8 @@ class LoginAsset extends AssetBundle {
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        //'app\assets\AnimateCssAsset',
+        'app\assets\AnimateCssAsset',
+        'app\assets\AnimateDelayCssAsset',
     ];
 
 }
