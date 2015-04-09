@@ -19,7 +19,7 @@ class FlagIconCssAsset extends AssetBundle {
 
     public $sourcePath = '@vendor/bower/flag-icon-css';
     public $css = [
-        '/less/flag-icon.less',
+        'less/flag-icon.less',
     ];
 
 }
