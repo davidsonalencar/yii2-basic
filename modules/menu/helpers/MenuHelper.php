@@ -57,7 +57,7 @@ class MenuHelper {
      */
     public static function getItems() {
         
-        //$result = self::resolveCache()->get('menu');
+        $result = self::resolveCache()->get('menu');
         
         if (!empty($result)) {
             return $result;
@@ -100,10 +100,10 @@ class MenuHelper {
     
     /**
      * Returns cache component configured as in cacheId
-     * @return \app\components\caching\SessionCache
+     * @return yii\web\Session
      */
     private static function resolveCache() {
-        return Yii::$app->getCache();
+        return Yii::$app->getSession();
     }
     
 }

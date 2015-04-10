@@ -213,7 +213,7 @@ class Operador extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
      * @return \app\components\caching\SessionCache
      */
     public static function resolveCache() {
-        return Yii::$app->getCache();
+        return Yii::$app->getSession();
     }
     
     /**

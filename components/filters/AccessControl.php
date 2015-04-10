@@ -24,6 +24,12 @@ class AccessControl extends \yii\filters\AccessControl {
                 Yii::$app->controller->getRoute(),
             ]
         ];
+
+        // Se o módulo DEBUG estiver ativo, permitir acessar sempre
+        if (preg_match('/^debug\//', Yii::$app->controller->getRoute())) {
+            $lastPosition = \yii\helpers\ArrayHelper::count($this->rules)-1;
+            $this->rules[$lastPosition]['roles'] = ['?', '@'];
+        }
         
         // Permite a ação de error desde que esteja logado.
         // Quando deslogado será redirecionado para a tela de login

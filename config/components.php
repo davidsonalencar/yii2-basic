@@ -20,9 +20,9 @@ $config = [
             /*'class' => 'app\components\web\AssetConverter',*/
             'forceConvert' => YII_ENV_DEV,
             
-            'commands' => [
-                'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
-            ],
+//            'commands' => [
+//                'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
+//            ],
         ],
     ],
     // Gerenciamento da requisição
@@ -34,11 +34,16 @@ $config = [
     ],
     // Forma que a aplicação realiza o cache
     'cache' => [
-        'class' => 'app\components\caching\SessionCache',
+        //'class' => 'app\components\caching\SessionCache',
+        'class' => 'yii\caching\FileCache',
+    ],
+    // Session
+    'session' => [
+        'class' => 'yii\web\CacheSession',
     ],
     // Controle de autenticação
     'user' => [
-        'class' => 'app\modules\user\components\User',
+        'class' => 'yii\web\User',
         'identityClass' => 'app\models\Operador',
         'enableAutoLogin' => true,
         'loginUrl' => 'login',
@@ -46,6 +51,14 @@ $config = [
     // Controle de acesso
     'authManager' => [
         'class' => 'app\components\rbac\DbManager',
+        // Para cachear todos os items de direitos para todos os usuarios
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+        // Paga cachear todos os items de direitos para o usuário logado
+        'session' => [
+            'class' => 'yii\web\CacheSession',
+        ],
     ],
     // Internacionalização
     'i18n' => [

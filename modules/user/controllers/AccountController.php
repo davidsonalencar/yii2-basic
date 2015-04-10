@@ -20,24 +20,6 @@ class AccountController extends Controller {
             ],
         ];
         
-        
-        /*
-         * usado no AccessControl
-        $config['access'] = ArrayHelper::merge($config['access'], [
-            'rules' => [
-                [
-                    'allow' => true,
-                    'actions' => ['login'],
-                    'roles' => ['?'],
-                ],
-                [
-                    'allow' => true,
-                    'actions' => ['logout'],
-                    'roles' => ['@'],
-                ],
-            ]
-        ]);*/
-        
         return $config;
     }
     

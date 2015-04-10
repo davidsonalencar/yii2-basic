@@ -15,7 +15,7 @@ class VarDumper extends \yii\helpers\BaseVarDumper {
     
     public static function dump($var, $depth = 10, $highlight = true) {
         parent::dump($var, $depth, $highlight);
-        //die();
+        die();
     }            
     
 }
