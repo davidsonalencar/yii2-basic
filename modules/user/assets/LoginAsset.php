@@ -20,7 +20,7 @@ class LoginAsset extends AssetBundle {
     public $baseUrl = '@web';
     public $baseImg = '@web/imgs';
     public $css = [
-        'css/login.css',
+        'css/login.less',
     ];
     public $js = [
         'js/login.parallax.init.js',
