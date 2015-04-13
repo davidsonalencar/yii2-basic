@@ -1,0 +1,312 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@gray-lightest:          lighten(@gray-base, 97.25%);
+
+@brand-primary:         lighten(#354F7E, 15%); // #337ab7
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               #fff;
+//** Global text color on `<body>`.
+@text-color:            @gray-dark;
+
+//** Global textual link color.
+@link-color:            @brand-primary;
+//** Link hover color set via `darken()` function.
+@link-hover-color:      darken(@link-color, 15%);
+//** Link hover decoration.
+@link-hover-decoration: underline;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+@padding-base-vertical:     6px;
+@padding-base-horizontal:   12px;
+
+@padding-large-vertical:    10px;
+@padding-large-horizontal:  16px;
+
+@padding-base: 15px;
+
+@border-radius-base:        0px;
+@border-radius-large:       0px;
+@border-radius-small:       0px;
+
+@transition-duration-base:   .35s;
+
+@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-small:         1.5;
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@btn-primary-bg, 5%);
+
+
+//== Forms
+//
+//##
+
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+@input-border-radius:            @border-radius-base;
+
+//** Border color for inputs on focus
+@input-border-focus:             @gray-light;
+@input-border-left-focus:        @brand-primary;
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+@zindex-navbar:            1000;
+@zindex-dropdown:          1000;
+@zindex-popover:           1060;
+@zindex-tooltip:           1070;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+@screen-xs: 480px;
+// Small screen / tablet
+@screen-sm: 768px;
+// Medium screen / desktop
+@screen-md: 992px;
+// Large screen / wide desktop
+@screen-lg: 1200px;
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max: (@screen-sm - 1);
+@screen-sm-max: (@screen-md - 1);
+@screen-md-max: (@screen-lg - 1);
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+
+//== Sidebar
+//
+//##
+@sidebar-width: 269px;
+@sidebar-min-width: 51px;
+@sidebar-border-color: @gray-lighter;
+@sidebar-profile-img-border-color: lighten(@brand-primary,20%);
+@sidebar-profile-badge-bg: darken(@brand-primary,13%);
+
+
+//== Navbar
+//
+//##
+
+@navbar-height: 50px;
+@navbar-default-bg: @brand-primary;
+@navbar-default-brand-width: @sidebar-width;
+@navbar-default-brand-img-height: @navbar-height;
+@navbar-default-brand-border-color: darken(@brand-primary,13%);
+//@navbar-default-border: #FFF;
+//@navbar-default-brand-color: lighten(@brand-primary,43%);
+//@navbar-default-brand-hover-color: #FFF;
+//@navbar-default-brand-hover-bg: transparent;
+@navbar-default-toggle-border-color: transparent;
+@navbar-default-toggle-hover-bg: transparent;
+@navbar-default-toggle-icon-bar-bg: lighten(@brand-primary,20%);
+@navbar-default-toggle-icon-bar-hover-bg: #FFF;
+@navbar-default-form-control-height: @navbar-height;
+@navbar-default-form-control-bg: darken(@brand-primary,13%);
+@navbar-default-form-control-placeholder: lighten(@brand-primary,20%);
+@navbar-default-form-control-color: #FFF;
+@navbar-default-link-color: #FFF;
+@navbar-default-link-active-bg: darken(@brand-primary,13%);
+@navbar-default-link-active-color: #FFF;
+@navbar-default-link-badge-bg: #FFF;
+@navbar-default-link-badge-color: darken(@brand-primary,13%);
+@navbar-default-user-border-color: lighten(@brand-primary,20%);
+
+
+//== Navs
+//
+//##
+
+
+//== Pagination
+//
+//##
+
+
+//== Pager
+//
+//##
+
+
+//== Jumbotron
+//
+//##
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+@state-success-text:             #3c763d;
+@state-success-bg:               #dff0d8;
+@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:                #31708f;
+@state-info-bg:                  #d9edf7;
+@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:             #8a6d3b;
+@state-warning-bg:               #fcf8e3;
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:              #a94442;
+@state-danger-bg:                #f2dede;
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+
+
+//== Tooltips
+//
+//##
+
+
+//== Popovers
+//
+//##
+
+
+//== Labels
+//
+//##
+
+
+//== Modals
+//
+//##
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+
+//== Progress bars
+//
+//##
+
+
+//== List group
+//
+//##
+
+
+//== Panels
+//
+//##
+
+
+//== Thumbnails
+//
+//##
+
+
+//== Wells
+//
+//##
+
+
+//== Badges
+//
+//##
+
+
+//== Breadcrumbs
+//
+//##
+
+
+//== Carousel
+//
+//##
+
+
+//== Close
+//
+//##
+
+
+//== Code
+//
+//##
+
+
+//== Type
+//
+//##
+
+@fotter-height: 30px;

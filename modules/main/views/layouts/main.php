@@ -13,6 +13,7 @@ use app\modules\main\widgets\NavNotification;
 /* @var $content string */
 
 AppAsset::register($this);
+$this->params['class-css-footer'] = '';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

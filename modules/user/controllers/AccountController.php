@@ -47,7 +47,7 @@ class AccountController extends Controller {
             return $this->goBack();
         } else {
             
-            $this->layout = 'login';
+            $this->layout = '/login';
             
             return $this->render('login', [
                 'model' => $model,

@@ -19,9 +19,9 @@ $config = [
         'converter' => [
             /*'class' => 'app\components\web\AssetConverter',*/
             'forceConvert' => YII_ENV_DEV,
-            'commands' => [
-                'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
-            ],
+//            'commands' => [
+//                'less' => ['css', '/usr/local/bin/lessc {from} {to} --no-color'],
+//            ],
         ],
     ],
     // Gerenciamento da requisição
