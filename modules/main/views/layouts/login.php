@@ -7,5 +7,7 @@ use app\modules\main\assets\LoginAsset;
 LoginAsset::register($this);
 $this->params['class-css-footer'] = 'footer-login';
 $this->beginContent('@app/modules/main/views/layouts/_base.php'); ?>
-    <?=$content?>
+    <div class="container">
+        <?=$content?>
+    </div>
 <?php $this->endContent();

@@ -19,9 +19,7 @@ use yii\helpers\Html;
 
         <?php $this->beginBody() ?>
                 
-        <div class="container-fluid">
-            <?= $content ?>
-        </div>
+        <?= $content ?>
 
         <footer class="footer <?=$this->params['class-css-footer']?>">
             <p class="pull-center text-center">&copy; My Company <?= date('Y') ?>. System Named.</p>

@@ -1,10 +1,29 @@
 @import "variables.less";
+
+@text-color: #FFF;
+@body-bg:    darken(@brand-primary, 15%);
+@panel-bg:   transparent;
+
 @import "../../../vendor/bower/bootstrap/less/mixins.less";
 @import "mixins.less";
+@import "scaffolding.less";
+@import "panels.less";
 @import "type.less";
 @import "buttons.less";
 @import "forms.less";
 
+.help-block {
+    color: @text-color;
+}
+
+.footer {
+    color: lighten(@brand-primary, 25%);
+    background-color: transparent;
+    border: 0 none transparent;
+    left: 0;
+}
+
+/*
 .panel-login {
     position: absolute;
     right:0;
@@ -30,13 +49,10 @@
         color: #FFF;
     }
 }
-.footer-login {
-    color: lighten(@brand-primary, 25%);
-    background-color: transparent;
-    border: 0 none transparent;
-    left: 0;
-}
+*/
+/*
 
+*/
 /*
 html,
 body {
