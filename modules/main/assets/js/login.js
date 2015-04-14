@@ -47,7 +47,7 @@ $(function(){
     function initParallax() {
 
         $('body')
-                .on('mousemove', onMouseMove)
+                //.on('mousemove', onMouseMove)
                 .append($('<div/>', {
                     class: 'reflection reflection1',
                     'data-factor': '0.4'
@@ -75,6 +75,9 @@ $(function(){
             $('div.parallax').css('opacity', 1);
         }, 200);
         
+        setTimeout(function(){
+            $('body').on('mousemove', onMouseMove);
+        }, 2200);
     }
     
     initParallax();

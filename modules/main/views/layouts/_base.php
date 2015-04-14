@@ -22,7 +22,7 @@ use yii\helpers\Html;
         <?= $content ?>
 
         <footer class="footer <?=$this->params['class-css-footer']?>">
-            <p class="pull-center text-center">&copy; My Company <?= date('Y') ?>. System Named.</p>
+            <p class="pull-center text-center small">&copy; My Company <?= date('Y') ?>. System Named.</p>
         </footer>
 
         <?php $this->endBody() ?>

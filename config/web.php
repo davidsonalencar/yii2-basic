@@ -22,6 +22,7 @@ $config = [
     // Módulos/Componentes que serão executados em cada requisição
     'bootstrap' => [
         'log',
+        'main'
     ],
     // Registro dos módulos
     'modules' => [

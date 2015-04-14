@@ -33,8 +33,8 @@ use yii\bootstrap\ActiveForm;
                             'errorCssClass' => '',
                             'successCssClass' => '',
                             'fieldConfig' => [
-                                'template' => "<div class=\"col-lg-12\">{input}</div>\n<div class=\"col-lg-12\">{error}</div>",
-                                'labelOptions' => ['class' => 'col-lg-1 control-label'],
+                                'template' => "{input}\n{error}",
+                                'labelOptions' => ['class' => ''],
                             ],
                 ]);
                 ?>
@@ -59,20 +59,18 @@ use yii\bootstrap\ActiveForm;
                 ?>
 
                 <div class="form-group">
-                    <div class="col-lg-12">
-                <?=
-                Html::submitButton(Yii::t('app', 'Login'), [
-                    'class' => 'btn btn-lg btn-primary btn-block animated delay-3 bounceIn',
-                    'name' => 'login-button'
-                ])
-                ?>
-                    </div>
+                    <?=
+                    Html::submitButton(Yii::t('app', 'Login'), [
+                        'class' => 'btn btn-lg btn-primary btn-block animated delay-3 bounceIn',
+                        'name' => 'login-button'
+                    ])
+                    ?>
                 </div>
 
                 <?=
                 $form->field($model, 'rememberMe', [
                     //'checkboxTemplate' => "<div class=\"col-lg-12\">{input}</div>",
-                    'checkboxTemplate' => "<div class=\"checkbox col-lg-12\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>",
+                    'checkboxTemplate' => "<div class=\"checkbox\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>",
                     'options' => [
                         'class' => 'form-group animated delay-4 bounceIn'
                     ],
