@@ -1,12 +1,18 @@
 <?php
 
-use yii\helpers\Html;
 use app\modules\main\assets\MainAsset;
+use kartik\icons\Icon;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+// Register Default Icon
+Icon::map($this);
+// Register FI Icon
+Icon::map($this, Icon::FI);
+// Register Asset
 MainAsset::register($this);
+
 $this->beginContent('@app/modules/main/views/layouts/_base.php'); ?>
 
     <?php

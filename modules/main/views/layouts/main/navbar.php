@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use app\modules\main\widgets\NavBar;
 use yii\bootstrap\Nav;
+use kartik\icons\Icon;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -20,7 +21,7 @@ NavBar::begin([
                 /**
                 * Messages
                 */
-                'label' => '<i class="fa fa-envelope fa-fw"></i> <span class="badge">4</span>', 
+                'label' => Icon::show('envelope').'<span class="badge">4</span>', 
                 'encode' => false,
                 'options' => [
                     'class' => 'dropdown-messages hidden-xs hidden-sm'
@@ -30,7 +31,7 @@ NavBar::begin([
                 /**
                  * Tarefas
                  */
-                'label' => '<i class="fa fa-tasks fa-fw"></i> <span class="badge">4</span>', 
+                'label' => Icon::show('tasks').'<span class="badge">4</span>', 
                 'encode' => false,
                 'options' => [
                     'class' => 'dropdown-tasks hidden-xs'
@@ -40,7 +41,7 @@ NavBar::begin([
                 /**
                  * Alertas
                  */
-                'label' => '<i class="fa fa-bell fa-fw"></i> <span class="badge">4</span>', 
+                'label' => Icon::show('bell').'<span class="badge">4</span>', 
                 'encode' => false,
                 'options' => [
                     'class' => 'dropdown-alerts hidden-xs'
@@ -50,7 +51,7 @@ NavBar::begin([
                 /**
                  * Idiomas
                  */
-                'label' => '<i class="flag-icon flag-icon-us"></i>', 
+                'label' => Icon::show('us', [], Icon::FI), 
                 'encode' => false,
                 'options' => [
                     'class' => 'dropdown-language hidden-xs'

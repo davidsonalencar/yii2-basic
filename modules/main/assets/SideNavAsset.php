@@ -14,22 +14,15 @@ use yii\web\AssetBundle;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 2.0
  */
-class MainAsset extends AssetBundle {
+class SideNavAsset extends AssetBundle {
 
     public $sourcePath = '@app/modules/main/assets';
-    public $css = [
-        'less/main.less',
-    ];
     public $js = [
+        'js/widgets.sidenav.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        //'yii\bootstrap\BootstrapAsset',
-        //'app\assets\FontAwesomeAsset',
-        'app\assets\FontRobotoAsset',
-        'app\assets\FontOpenSansAsset',
-        //'app\assets\FlagIconCssAsset',
     ];
 
 }

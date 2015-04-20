@@ -24,7 +24,7 @@ class LoginAsset extends AssetBundle {
         'less/login.less',
     ];
     public $js = [
-        'js/login.js',
+        'js/views.layout.login.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
