@@ -9,17 +9,25 @@
 
 @gray-lightest:         lighten(@gray-base, 97.25%);
 
-@brand-primary:         lighten(#354F7E, 15%); // #337ab7
+//@brand-primary:         lighten(#354F7E, 15%); // #337ab7
+@brand-primary:         #354F7E; // #337ab7
+@brand-inverse:         darken(@brand-primary,13%);
 
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
+//** Global text inverse color on `<body>`.
+@text-inverse-color:   #fff;
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
+@line-height-large-computed:    floor((@font-size-large * @line-height-large)); // ~23px
+@line-height-small-computed:    floor((@font-size-small * @line-height-small)); // ~23px
+
+@font-size-small:               ceil((@font-size-base * 0.75)); // ~11px
 
 
 //== Iconography
@@ -48,7 +56,8 @@
 //== Forms
 //
 //##
-@input-border-left-focus: @brand-primary;
+@input-border-left-focus:         @brand-primary;
+@input-inverse-color-placeholder: lighten(@brand-primary,20%);
 
 
 
@@ -63,6 +72,7 @@
 // of components dependent on the z-axis and are designed to all work together.
 //
 // Note: These variables are not generated into the Customizer.
+@zindex-sidenav:            1000;
 
 
 //== Media queries breakpoints
@@ -80,15 +90,59 @@
 //## Define the maximum width of `.container` for different screen sizes.
 
 
-//== Sidebar
+//== Main
 //
 //##
+@main-bg:                                   @gray-lightest;
+@main-page-header-bg:                       #fff;
 
+//== SideNav
+//
+//##
+@sidenav-width:                             240px;//269px;
+@sidenav-collapsed-width:                   70px;
+@sidenav-bg:                                #fff;
+@sidenav-border-color:                      @gray-lighter;
+@sidenav-margin-top:                        @navbar-height;
+@sidenav-font-size-large:                   floor((@font-size-base * 1.6));
 
 //== Navbar
 //
 //##
+@navbar-padding-horizontal:                 0;
 
+@navbar-margin-bottom:                      @line-height-large-computed;
+@navbar-padding-vertical:                   ((@navbar-height - @line-height-large-computed) / 2)+0.5;
+
+@navbar-brand-logo-width:                   80px;
+
+// Primary navbar
+// Reset inverted navbar basics
+@navbar-primary-color:                      lighten(@gray-light, 15%);
+@navbar-primary-bg:                         @brand-primary;
+@navbar-primary-border:                     darken(@navbar-primary-bg, 10%);
+
+// Inverted navbar links
+@navbar-primary-link-color:                 #fff;
+@navbar-primary-link-hover-color:           #fff;
+@navbar-primary-link-hover-bg:              @brand-inverse;
+@navbar-primary-link-active-color:          @navbar-primary-link-hover-color;
+@navbar-primary-link-active-bg:             darken(@navbar-primary-bg, 10%);
+@navbar-primary-link-disabled-color:        #444;
+@navbar-primary-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-primary-brand-color:                @navbar-primary-link-color;
+@navbar-primary-brand-hover-color:          #fff;
+@navbar-primary-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-primary-toggle-hover-bg:            transparent;
+@navbar-primary-toggle-icon-bar-bg:         #fff;
+@navbar-primary-toggle-border-color:        transparent;
+
+// Primary navbar header
+@navbar-primary-header-max-width:           @sidenav-width;
 
 //== Navs
 //
@@ -197,3 +251,8 @@
 //== Type
 //
 //##
+@page-header-bg:      #fff;
+@main-bg:             @gray-lightest;
+@footer-bg:           @gray-lightest;
+@footer-border-color: @gray-lighter;
+@footer-height:       30px;

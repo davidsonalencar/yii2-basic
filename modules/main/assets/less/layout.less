@@ -1,0 +1,89 @@
+.wrapper {
+    > header {
+        .navbar-fixed-top;
+    }
+    > main,
+    > footer {
+        margin-left: @sidenav-width;
+    }
+    > main {
+        margin-top: @navbar-height;
+        margin-bottom: @footer-height;
+        position: relative;
+        > .page-header {
+            .fixed-top;
+            left: @sidenav-width;
+        }
+        > .page-content {
+            margin-top: 58px;
+        }
+    }
+    > footer {
+        margin-left: @sidenav-width;
+        height: @footer-height;
+        padding-top: ((@footer-height - @line-height-small-computed) / 2);
+    }
+    
+    @media (max-width: @screen-xs-max) {
+        > main,
+        > footer {
+            margin-left: 0;
+        }
+        > main {
+            > .page-header {
+                left: 0;
+            }
+        }
+        > nav.sidenav {
+            width: 0;
+        }
+    }
+    
+    // Menu collapsed
+    @media (min-width: @screen-sm-min) {
+        .sidenav-collapsed & {
+            > main,
+            > footer {
+                margin-left: @sidenav-collapsed-width;
+            }
+            main {
+                > .page-header {
+                    left: @sidenav-collapsed-width;
+                }
+            }
+            nav.sidenav {
+                width: @sidenav-collapsed-width;
+                .profile-block {
+                    display: block !important;
+                    > figure {
+                        padding: @grid-gutter-width / 3;
+                    }
+                }    
+                .sidenav-menu {
+                    > li {
+                        &.profile-block figcaption{
+                            .hidden;
+                        }
+                        > a {
+                            font-size: @sidenav-font-size-large;
+                            .text-center;
+                            .menu-title {
+                                .hidden;
+                            }
+                            span.fa {
+                                .hidden;
+                            }
+                        }
+                    }
+                }    
+            }
+        }
+    }
+    
+    // Navmain Toggled
+    .sidenav-toggled & {
+        nav.sidenav {
+            width: @sidenav-width;
+        }
+    }
+}

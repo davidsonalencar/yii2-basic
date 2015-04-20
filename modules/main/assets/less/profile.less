@@ -1,0 +1,26 @@
+.profile-block {
+    @height: 50px;
+/*    height: @height + @grid-gutter-width;*/
+    color: @gray-light;
+    background-color: @gray-lightest;
+    > figure {
+        padding: @grid-gutter-width / 2;
+        overflow: auto;        
+        > img {
+            border: 1px solid @brand-primary;
+            height: @height;
+            .pull-left;
+        }
+        > .badge {
+            position: absolute;
+            margin-left: -12px;
+            margin-top: -6px;
+            background-color: @brand-primary;
+        }
+        > figcaption {
+            height: 100%;
+            padding-left: @height + (@grid-gutter-width / 2);
+            padding-top: 5px;
+        }
+    }
+}

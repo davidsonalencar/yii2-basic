@@ -17,15 +17,19 @@ use yii\helpers\Html;
     </head>
     <body>
 
-        <?php $this->beginBody() ?>
-                
-        <?= $content ?>
+        <div class="wrapper">
+        
+            <?php $this->beginBody() ?>
 
-        <footer class="footer <?=$this->params['class-css-footer']?>">
-            <p class="pull-center text-center small">&copy; My Company <?= date('Y') ?>. System Named.</p>
-        </footer>
+            <?= $content ?>
 
-        <?php $this->endBody() ?>
+            <footer class="footer">
+                <p class="pull-center text-center small">&copy; My Company <?= date('Y') ?>. System Named.</p>
+            </footer>
+
+            <?php $this->endBody() ?>
+            
+        </div>
         
     </body>
 </html>

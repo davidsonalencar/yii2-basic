@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -13,25 +14,22 @@ use yii\web\AssetBundle;
  * @author Davidson Alencar <davidson.t.i@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
-{
-    public $sourcePath = '@webroot/less';
-    //public $sourcePath = '@webroot';
-    //public $basePath = '@webroot';
-    public $baseUrl = '@web';
+class MainAsset extends AssetBundle {
+
+    public $sourcePath = '@app/modules/main/assets';
     public $css = [
-        //'css/site.css',
-        'site.less',
+        'less/main.less',
     ];
     public $js = [
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'yii\bootstrap\BootstrapAsset',
+        //'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
         'app\assets\FontRobotoAsset',
         'app\assets\FontOpenSansAsset',
         'app\assets\FlagIconCssAsset',
     ];
+
 }

@@ -31,7 +31,9 @@
         "bower-asset/roboto-fontface": "v0.2.4",
         "bower-asset/open-sans-fontface": "1.1.0",
         "bower-asset/flag-icon-css": "0.6.4",
-        "bower-asset/animate-delay.css": "1.0.0"
+        "bower-asset/animate-delay.css": "1.0.0",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "kartik-v/yii2-icons": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

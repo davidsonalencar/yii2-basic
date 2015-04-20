@@ -1,12 +1,28 @@
 html,
 body {
     height: 100%;
-    overflow: hidden;
 }
 
-body > footer {
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
+// Rounded corners
+.img-rounded {
+    border-radius: 4px;
+}
+
+.wrapper {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    
+    > footer {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+    }
+    
+    > main {
+        overflow: auto;
+    }
 }
