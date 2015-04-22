@@ -1,7 +1,6 @@
 
 
-.sidenav {
-    
+.sidenav {    
     width: @sidenav-width;
     background-color: @sidenav-bg;
     border-right: 1px solid @sidenav-border-color;
@@ -21,7 +20,7 @@
     @select: ul > li;
     .loop(@factor: 0.5, @agr-select) when (@factor <= 2) {
         @{agr-select} > a {
-            padding-left: @grid-gutter-width * @factor;
+            padding-left: (@grid-gutter-width * @factor) - 4;
         }
         .loop(@factor + 0.5, @agr-select @select);
     }    
@@ -33,13 +32,17 @@
             
             > a {
                 color: @sidenav-link-color;
-
+                border-left: 5px solid transparent;
+                
                 &:focus {
                     background-color: transparent;
                 }
                 &:hover {
                     color: @sidenav-link-hover-color;
                     background-color: @sidenav-link-hover-bg;                    
+                }
+                > .menu-title {
+                    padding-left: 5px;
                 }
             }
 

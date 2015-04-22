@@ -42,7 +42,7 @@
             //
             $this.find('.collapse')
                 .on('hidden.bs.collapse', function (e) {
-                    var icon = $(this).prev('a').children('i');
+                    var icon = $(this).prev('a').children('.indicator');
                     var classHidden = icon.data('class-hidden');
                     var classShown  = icon.data('class-shown');
                     icon.removeClass(classShown);
@@ -50,7 +50,7 @@
                     e.stopPropagation();
                 })
                 .on('shown.bs.collapse', function (e) {
-                    var icon = $(this).prev('a').children('i');
+                    var icon = $(this).prev('a').children('.indicator');
                     var classHidden = icon.data('class-hidden');
                     var classShown  = icon.data('class-shown');
                     icon.removeClass(classHidden);

@@ -6,7 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\bootstrap\Widget;
-use yii\bootstrap\BootstrapPluginAsset;
+use app\modules\main\assets\NavBarAsset;
 
 /**
  * NavBar renders a navbar HTML component.
@@ -95,14 +95,14 @@ class NavBar extends Widget {
      * para mostrar/esconder um menu de navegação quando a página estiver com 
      * resolução menor que xs (768px)  
      */
-    public $classToggled = '';
+    public $classToggled = 'sidenav-toggled';
     
     /**
      * @var string classe aplicada no elemento body ao clicar no navbar-toggle 
      * para minimizar/maximizar um menu de navegação quando a página estiver com 
      * resolução maior e igual que xs (768px)  
      */
-    public $classCollapsed = '';
+    public $classCollapsed = 'sidenav-collapsed';
     
     /**
      * Initializes the widget.
@@ -127,8 +127,22 @@ class NavBar extends Widget {
             
         echo $this->endNavBar();
         
-        BootstrapPluginAsset::register($this->getView());
+        $this->registerAssets();
     }
+
+    /**
+     * Register Assets
+     */
+    protected function registerAssets() {
+
+        $view = $this->getView();
+
+        NavBarAsset::register($view);
+
+        $view->registerJs("$('#{$this->options['id']}').navbar();");
+        
+    }
+
 
     protected function beginNavBar() {
         

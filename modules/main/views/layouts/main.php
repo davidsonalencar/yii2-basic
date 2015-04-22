@@ -2,6 +2,7 @@
 
 use app\modules\main\assets\MainAsset;
 use kartik\icons\Icon;
+use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -19,9 +20,14 @@ $this->beginContent('@app/modules/main/views/layouts/_base.php'); ?>
         echo $this->render('main/navbar');
         echo $this->render('main/sidenav');
     ?>
-
-    <?=$content?>
-
-
+    
+    <main>
+        <h1 class="page-header">
+            <?= Html::encode($this->title) ?>
+        </h1>
+        <div class="page-content">
+            <?=$content?>
+        </div>
+    </main>
 
 <?php $this->endContent();

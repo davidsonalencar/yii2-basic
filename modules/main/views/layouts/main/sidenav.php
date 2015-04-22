@@ -6,6 +6,7 @@ use app\modules\main\widgets\SideNav;
 //use yii\widgets\Menu;
 //use app\modules\menu\widgets\Menu;
 use yii\bootstrap\Nav;
+use kartik\icons\Icon;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -15,13 +16,13 @@ echo Html::beginTag('nav', [
 ]);
 
     echo SideNav::widget([
-//        'options' => [
-//            'class' => 'nav nav-pills nav-stacked',
-//        ],
+        'iconPrefix' => Icon::getFrameworkPrefix(),
         'items' => [[
+            'icon' => 'bar-chart',
             'label' => 'Home', 
             'url' => ['default/index']
         ],[
+            'icon' => 'anchor',
             'label' => 'Products', 
             'url' => ['product/index'], 
             'items' => [[
@@ -39,6 +40,7 @@ echo Html::beginTag('nav', [
                 'url' => ['product/index', 'tag' => 'popular']
             ]]
         ],[
+            'icon' => 'pie-chart',
             'label' => 'Products', 
             'url' => ['product/index'], 
             'items' => [[

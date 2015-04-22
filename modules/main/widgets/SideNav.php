@@ -2,7 +2,6 @@
 
 namespace app\modules\main\widgets;
 
-use yii\bootstrap\Nav;
 use yii\widgets\Menu;
 use \yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -23,7 +22,7 @@ class SideNav extends Menu {
      * while `{label}` will be replaced with the link text.
      * This property will be overridden by the `template` option set in individual menu items via [[items]].
      */
-    public $linkTemplate = '<a href="{url}">{icon}{label}</a>';
+    public $linkTemplate = '<a href="{url}">{icon}<span class="menu-title">{label}</span></a>';
 
     /**
      * @var string the template used to render the body of a menu which is NOT a link.
@@ -48,7 +47,7 @@ class SideNav extends Menu {
     /**
      * @var string indicator for a menu sub-item
      */
-    public $indItem = '- ';    
+    public $indItem = '-';    
     
     /**
      * @var string indicator for a opened sub-menu
@@ -128,9 +127,6 @@ class SideNav extends Menu {
             if (empty($item['items'])) {
                 $template = str_replace('{icon}', $this->indItem . '{icon}', $template);
             } else {
-                //$template  = isset($item['template']) ? $item['template'] : '<a href="{url}" class="da-toggle">{icon}{label}</a>';
-                //$options   = ($item['active']) ? ['class' => 'collapse in'] : ['class' => 'collapse'];
-                //$indicator = Html::tag('span', $this->indCOpen, $openOptions) . Html::tag('span', $this->indMenuClose, $closeOptions);
                 $indicator = Html::tag('i', '', [
                     'class' => $this->indClass . ' ' . ($item['active'] ? $this->iconPrefix.$this->indClassShown : $this->iconPrefix.$this->indClassHidden), 
                     'data-class-shown' => $this->iconPrefix.$this->indClassShown,
@@ -139,7 +135,7 @@ class SideNav extends Menu {
                 $template  = str_replace('{icon}', $indicator . '{icon}', $template);
             }
         }
-        $icon = empty($item['icon']) ? '' : '<i class="' . $this->iconPrefix . $item['icon'] . '"></i> &nbsp;';
+        $icon = empty($item['icon']) ? '' : '<i class="' . $this->iconPrefix . $item['icon'] . '"></i>';
         unset($item['icon'], $item['top']);
         return strtr($template, [
             '{url}' => $url,
