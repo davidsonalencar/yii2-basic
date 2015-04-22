@@ -2,20 +2,15 @@
 
 ## Pré-requisitos do sistema
 
-<ul>
-    <li>PHP 5.4 ou superior</li>
-    <li>Extensões do PHP habilitadas:
-        <ul>
-            <li>php_mysql</li>
-            <li>openssl</li>
-            <li>mbstring</li>
-            <li>curl</li>
-            <li>gd2</li>
-            <li>intl</li>
-            <li>apc (veja a descrição logo abaixo)</li>
-        </ul>
-    </li>
-</ul>
+* PHP 5.4 ou superior
+* Extensões do PHP habilitadas:
+    * php_mysql
+    * openssl
+    * mbstring
+    * curl
+    * gd2
+    * intl
+    * apc (veja a descrição logo abaixo)
 
 Caso esteja utilizando o PHP 5.4, deverá realizar o [download](http://windows.php.net/downloads/pecl/releases/apc/3.1.13/php_apc-3.1.13-5.4-ts-vc9-x86.zip) do APC Cache. O PHP 5.5 está com o APC Cache nativo. Por fim, em ambas as versões do PHP, acrescentar no arquivo php.ini o parâmetro abaixo para habilitar o cliente do [APC Cache](http://php.net/manual/pt_BR/book.apc.php) no YII2:
 ```
@@ -34,14 +29,9 @@ cgi.fix_pathinfo=0
 ```
 
 ## Pré-requisitos para ambiente de desenvolvimento
-<ul>
-    <li>JDK 7</li>
-    <li><a href="http://nodejs.org">Node.JS</a> Package Manager:
-        <ul>
-            <li><a href="https://www.npmjs.org/package/less">less</a></l>
-        </ul>
-    </li>
-</ul>
+* JDK 7</li>
+* [Node.JS](http://nodejs.org) Package Manager:
+    * [less](https://www.npmjs.org/package/less)
 
 No Mac OS, terá que adicionar um caminho no PATH Apache Environment:
 * Altere o arquivo **launchd.conf**:
